@@ -1,0 +1,209 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
+import { products } from "@/lib/products";
+import { useCartStore } from "@/lib/cart-store";
+import { Suspense } from "react";
+
+const COLLECTIONS = [
+  "All",
+  "Diffusers",
+  "Concrete Pot Candles",
+  "Concrete Candle Refills",
+  "Soy Wax Candles",
+] as const;
+
+function ShopContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const collection = searchParams.get("collection") ?? "All";
+
+  const [addedId, setAddedId] = useState<string | null>(null);
+
+  const addItem = useCartStore((s) => s.addItem);
+
+  const handleCollectionChange = (c: string) => {
+    if (c === "All") {
+      router.push("/shop");
+    } else {
+      router.push(`/shop?collection=${encodeURIComponent(c)}`);
+    }
+  };
+
+  const filtered = useMemo(
+    () =>
+      products.filter(
+        (p) => collection === "All" || p.collection === collection
+      ),
+    [collection]
+  );
+
+  const handleAddToBag = (product: (typeof products)[0], e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addItem(product, product.sizes[0]);
+    setAddedId(product.id);
+    setTimeout(() => setAddedId(null), 1800);
+  };
+
+  const pageTitle = collection === "All" ? "Our Collection" : collection;
+
+  return (
+    <div className="min-h-screen bg-white">
+
+      {/* Hero */}
+      <section
+        className="pb-12 lg:pb-16 text-center"
+        style={{
+          paddingTop: "104px",
+          background:
+            "radial-gradient(ellipse at 30% 0%, #F2D8D2 0%, #FAF0ED 35%, #FEFCFB 65%, #FFFFFF 90%)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-8 text-left">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-[11px] font-300 tracking-[0.12em] uppercase text-[#B8B0A8] hover:text-black transition-colors duration-200"
+          >
+            <ArrowLeft size={11} strokeWidth={1.5} />
+            Home
+          </Link>
+        </div>
+        <h1 className="text-[26px] lg:text-[40px] font-300 tracking-[0.28em] uppercase text-black">
+          {pageTitle}
+        </h1>
+      </section>
+
+      {/* Main */}
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 flex gap-16 lg:gap-20 py-16 lg:py-24">
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block w-[180px] flex-shrink-0">
+          <nav className="flex flex-col gap-1">
+            {COLLECTIONS.map((c) => {
+              const active = collection === c;
+              return (
+                <button
+                  key={c}
+                  onClick={() => handleCollectionChange(c)}
+                  className={`text-left py-2 text-[12px] tracking-[0.1em] uppercase transition-colors duration-200 ${
+                    active
+                      ? "text-black font-400"
+                      : "text-[#B8B0A8] font-300 hover:text-black"
+                  }`}
+                >
+                  {c === "All" ? "All Products" : c}
+                </button>
+              );
+            })}
+          </nav>
+        </aside>
+
+        {/* Grid */}
+        <div className="flex-1 min-w-0">
+          {filtered.length === 0 ? (
+            <div className="py-32 text-center">
+              <p className="text-[12px] font-300 tracking-[0.1em] uppercase text-[#B8B0A8] mb-8">
+                No products found
+              </p>
+              <button
+                onClick={() => handleCollectionChange("All")}
+                className="text-[10px] font-400 tracking-[0.18em] uppercase border-b border-black pb-0.5"
+              >
+                View All
+              </button>
+            </div>
+          ) : (
+            <motion.div
+              layout
+              className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-10 gap-y-16 lg:gap-y-24"
+            >
+              <AnimatePresence mode="popLayout">
+                {filtered.map((product, i) => (
+                  <motion.article
+                    key={product.id}
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: Math.min(i * 0.04, 0.2),
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="group cursor-pointer"
+                  >
+                    {/* Image */}
+                    <Link href={`/shop/${product.slug}`} className="block relative">
+                      <div className="relative aspect-[3/4] overflow-hidden bg-[#F5EAE7]">
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                        />
+
+                        {/* Badges */}
+                        {(product.isBestseller || product.isNew) && (
+                          <div className="absolute top-4 left-4 flex gap-2">
+                            {product.isBestseller && (
+                              <span className="bg-white text-black text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                                Bestseller
+                              </span>
+                            )}
+                            {product.isNew && (
+                              <span className="bg-black text-white text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                                New
+                              </span>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Add to Bag — hover reveal */}
+                        <div className="absolute inset-x-0 bottom-0 bg-white/95 py-4 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                          <button
+                            onClick={(e) => handleAddToBag(product, e)}
+                            className="text-[9px] font-500 tracking-[0.22em] uppercase text-black"
+                          >
+                            {addedId === product.id ? "Added ✓" : "Add to Bag"}
+                          </button>
+                        </div>
+                      </div>
+                    </Link>
+
+                    {/* Info */}
+                    <div className="mt-5 flex items-baseline justify-between gap-3">
+                      <Link
+                        href={`/shop/${product.slug}`}
+                        className="text-[13px] font-300 tracking-[0.06em] text-black hover:text-[#8A8075] transition-colors duration-200"
+                      >
+                        {product.name}
+                      </Link>
+                      <span className="text-[13px] font-300 text-[#8A8075] flex-shrink-0">
+                        ${product.sizes[0].price}
+                      </span>
+                    </div>
+                  </motion.article>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense>
+      <ShopContent />
+    </Suspense>
+  );
+}
