@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import { use, useState, useEffect } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,6 +26,10 @@ export default function ProductPage({ params }: Props) {
   const [accordionOpen, setAccordionOpen] = useState<string | null>("notes");
   const [added, setAdded] = useState(false);
   const [selectedScent, setSelectedScent] = useState<string | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [slug]);
 
   const isConcretePotCandle = product.type === "Concrete Pot Candle";
   const SCENTS = product.scents ?? [];
@@ -103,7 +107,7 @@ export default function ProductPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
 
           {/* Image gallery */}
-          <FadeIn direction="right">
+          <FadeIn direction="none">
             <div className="flex gap-4">
               {/* Main image */}
               <div className="relative flex-1 aspect-square overflow-hidden bg-[#F5EAE7]">
