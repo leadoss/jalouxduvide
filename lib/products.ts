@@ -41,6 +41,7 @@ export type Product = {
   isBestseller: boolean;
   isNew: boolean;
   burnTime?: string;
+  scents?: string[];
   collection: "Diffusers" | "Concrete Pot Candles" | "Concrete Candle Refills" | "Soy Wax Candles";
 };
 
@@ -221,6 +222,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Floral",
     scentNotes: { top: ["Peony", "White Tea"], heart: ["Rose Absolute"], base: ["Soft Musk"] },
+    scents: ["Peony", "White Tea", "Rose Absolute", "Soft Musk"],
     description: "A sculptural sphere covered in a coral-like surface that catches light from every angle. Finished in white, Corail is playful, poetic, and utterly unlike anything else on your shelf.",
     story: "Inspired by the tidal pools of the French Riviera, where organic forms and clean white surfaces coexist in quiet harmony.",
     sizes: [{ label: "Standard", volume: "200g", price: 15, sku: "CP-COR-200" }],
@@ -239,6 +241,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Floral",
     scentNotes: { top: ["Neroli", "Aldehydes"], heart: ["White Rose", "Jasmine"], base: ["White Musk", "Sandalwood"] },
+    scents: ["Neroli", "White Rose", "Jasmine", "White Musk", "Sandalwood"],
     description: "A white vessel engraved with carousel horses and baroque flourishes, resting on its own ornate display plate. Manège is the crown jewel of the collection — a piece that belongs as much on a vanity as it does in a museum.",
     story: "Each vessel is individually cast and hand-finished in white, its relief details a nod to the gilded carousels of nineteenth-century Paris.",
     sizes: [{ label: "Standard", volume: "200g", price: 18, sku: "CP-MAN-200" }],
@@ -257,6 +260,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Woody",
     scentNotes: { top: ["Bergamot"], heart: ["Cedarwood", "Vetiver"], base: ["Oakmoss", "Dark Amber"] },
+    scents: ["Bergamot", "Cedarwood", "Vetiver", "Oakmoss", "Dark Amber"],
     description: "A white vessel whose surface is carved with deep wood-grain lines that make it feel like a section of ancient timber. Available in white only, Écorce brings the quiet dignity of the forest indoors.",
     story: "The bark texture is pressed by hand into each mould before setting — no two vessels share exactly the same grain pattern.",
     sizes: [{ label: "Standard", volume: "200g", price: 15, sku: "CP-ECO-200" }],
@@ -275,6 +279,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Gourmand",
     scentNotes: { top: ["Caramel", "Vanilla"], heart: ["Tonka Bean"], base: ["Warm Sandalwood"] },
+    scents: ["Caramel", "Vanilla", "Tonka Bean", "Warm Sandalwood"],
     description: "Shallow and wide, rimmed with pleated ruffled edges like a classic French tart mould — finished in white. An effortlessly chic piece that doubles as a decorative dish between burns.",
     story: "Named for the tarte aux fruits mould found in every Parisian pâtisserie. Simple in form, striking in white.",
     sizes: [{ label: "Standard", volume: "200g", price: 15, sku: "CP-TAR-200" }],
@@ -293,6 +298,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Woody",
     scentNotes: { top: ["Black Pepper"], heart: ["Cedarwood", "Smoked Birch"], base: ["Dark Amber", "Musk"] },
+    scents: ["Black Pepper", "Cedarwood", "Smoked Birch", "Dark Amber", "Musk"],
     description: "A rough-hewn white cylinder with a crackling wooden wick and a matching lidded top. Brut makes no apology for its rawness — honest, architectural, and made to last.",
     story: "Hand-cast in a single pour and left unsmoothed. Every scratch and pit on the white surface is part of the design.",
     sizes: [{ label: "Standard", volume: "200g", price: 15, sku: "CP-BRU-200" }],
@@ -311,6 +317,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Floral",
     scentNotes: { top: ["Raspberry", "Lychee"], heart: ["Damask Rose", "Peony"], base: ["Cashmere", "White Musk"] },
+    scents: ["Raspberry", "Lychee", "Damask Rose", "Peony", "Cashmere"],
     description: "A white goblet vessel adorned with floral and baroque relief, crowned with a sculptural lidded top. Finished in white, Rosette is the most romantic piece in the collection — feminine, opulent, and completely unforgettable.",
     story: "The baroque detailing was inspired by antique French porcelain found in a Provençal market, reinterpreted here in pure white.",
     sizes: [{ label: "Standard", volume: "200g", price: 18, sku: "CP-ROS-200" }],
@@ -329,6 +336,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Fresh",
     scentNotes: { top: ["White Tea", "Neroli"], heart: ["Jasmine", "Lily"], base: ["Sandalwood", "Clean Musk"] },
+    scents: ["White Tea", "Neroli", "Jasmine", "Lily", "Sandalwood"],
     description: "A perfectly smooth, egg-shaped white vessel resting on a natural wood disc. Dôme is the quietest object in the room — and somehow the one everyone notices first.",
     story: "Conceived as an object of pure presence. No texture, no ornament — just a clean white form and the light it catches.",
     sizes: [{ label: "Standard", volume: "200g", price: 15, sku: "CP-DOM-200" }],
@@ -347,6 +355,7 @@ const concretePotCandles: Product[] = [
     type: "Concrete Pot Candle",
     scentFamily: "Earthy",
     scentNotes: { top: ["Cardamom", "Pink Pepper"], heart: ["Patchouli", "Vetiver"], base: ["Warm Earth", "Tonka"] },
+    scents: ["Cardamom", "Pink Pepper", "Patchouli", "Vetiver", "Tonka"],
     description: "A white teardrop vessel, slightly tapered at the top and grounded at the base. Simple in silhouette, striking in white — Larme is the piece that anchors the room without demanding attention.",
     story: "The teardrop form references ancient water vessels made to be held, not just displayed. Finished in white for a timeless, clean presence.",
     sizes: [{ label: "Standard", volume: "200g", price: 15, sku: "CP-LAR-200" }],
@@ -737,7 +746,7 @@ export const COLLECTIONS = [
     id: "concrete-pot-candles",
     label: "Concrete Pot Candles",
     description: "9 hand-cast concrete vessels, refillable for life",
-    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=1200&q=80",
+    image: "/products/concrete-candles/mainpic.png",
     href: "/shop?collection=Concrete Pot Candles",
     count: concretePotCandles.length,
   },

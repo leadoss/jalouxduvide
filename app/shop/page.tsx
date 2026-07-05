@@ -24,6 +24,7 @@ function ShopContent() {
   const collection = searchParams.get("collection") ?? "All";
 
   const [addedId, setAddedId] = useState<string | null>(null);
+  const [selectedScents, setSelectedScents] = useState<Record<string, string>>({});
 
   const addItem = useCartStore((s) => s.addItem);
 
@@ -33,6 +34,12 @@ function ShopContent() {
     } else {
       router.push(`/shop?collection=${encodeURIComponent(c)}`);
     }
+  };
+
+  const handleScentSelect = (productId: string, scent: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSelectedScents((prev) => ({ ...prev, [productId]: scent }));
   };
 
   const filtered = useMemo(
@@ -46,6 +53,7 @@ function ShopContent() {
   const handleAddToBag = (product: (typeof products)[0], e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (product.type === "Concrete Pot Candle" && !selectedScents[product.id]) return;
     addItem(product, product.sizes[0]);
     setAddedId(product.id);
     setTimeout(() => setAddedId(null), 1800);
@@ -165,14 +173,47 @@ function ShopContent() {
                           </div>
                         )}
 
-                        {/* Add to Bag — hover reveal */}
-                        <div className="absolute inset-x-0 bottom-0 bg-white/95 py-4 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                          <button
-                            onClick={(e) => handleAddToBag(product, e)}
-                            className="text-[9px] font-500 tracking-[0.22em] uppercase text-black"
-                          >
-                            {addedId === product.id ? "Added ✓" : "Add to Bag"}
-                          </button>
+                        {/* Hover reveal panel */}
+                        <div className="absolute inset-x-0 bottom-0 bg-white/95 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                          {product.type === "Concrete Pot Candle" ? (
+                            <div className="px-3 pt-3 pb-3">
+                              <div className="flex flex-wrap gap-1 mb-2">
+                                {(product.scents ?? []).map((scent) => (
+                                  <button
+                                    key={scent}
+                                    onClick={(e) => handleScentSelect(product.id, scent, e)}
+                                    className={`px-2 py-1 border text-[8px] font-400 tracking-[0.06em] transition-all duration-150 ${
+                                      selectedScents[product.id] === scent
+                                        ? "border-black bg-black text-white"
+                                        : "border-[#E8E4DF] text-black hover:border-black"
+                                    }`}
+                                  >
+                                    {scent}
+                                  </button>
+                                ))}
+                              </div>
+                              <button
+                                onClick={(e) => handleAddToBag(product, e)}
+                                disabled={!selectedScents[product.id]}
+                                className={`w-full py-2 text-[9px] font-500 tracking-[0.22em] uppercase transition-all duration-200 ${
+                                  selectedScents[product.id]
+                                    ? "bg-black text-white"
+                                    : "bg-[#E8E4DF] text-[#B8B0A8] cursor-not-allowed"
+                                }`}
+                              >
+                                {addedId === product.id ? "Added ✓" : "Add to Bag"}
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="py-4 text-center">
+                              <button
+                                onClick={(e) => handleAddToBag(product, e)}
+                                className="text-[9px] font-500 tracking-[0.22em] uppercase text-black"
+                              >
+                                {addedId === product.id ? "Added ✓" : "Add to Bag"}
+                              </button>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </Link>

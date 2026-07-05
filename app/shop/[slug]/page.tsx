@@ -25,11 +25,16 @@ export default function ProductPage({ params }: Props) {
   const [activeImage, setActiveImage] = useState(0);
   const [accordionOpen, setAccordionOpen] = useState<string | null>("notes");
   const [added, setAdded] = useState(false);
+  const [selectedScent, setSelectedScent] = useState<string | null>(null);
+
+  const isConcretePotCandle = product.type === "Concrete Pot Candle";
+  const SCENTS = product.scents ?? [];
 
   const { addItem } = useCartStore();
   const images = [product.image, product.hoverImage];
 
   const handleAddToBag = () => {
+    if (isConcretePotCandle && !selectedScent) return;
     addItem(product, selectedSize);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
@@ -81,8 +86,19 @@ export default function ProductPage({ params }: Props) {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
+    <div className="pt-32 lg:pt-[104px] min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pb-32">
+
+        {/* Mobile-only back link above image */}
+        <div className="lg:hidden mb-6">
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 text-[12px] font-300 tracking-[0.1em] uppercase text-black hover:text-[#8A8075] transition-colors duration-200"
+          >
+            <ArrowLeft size={12} strokeWidth={1.5} />
+            Back to Shop
+          </Link>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
 
@@ -183,13 +199,45 @@ export default function ProductPage({ params }: Props) {
                 </div>
               )}
 
+              {/* Scent selector — Concrete Pot Candles only */}
+              {isConcretePotCandle && (
+                <div className="mb-10">
+                  <p className="text-[10px] font-500 tracking-[0.16em] uppercase text-[#B8B0A8] mb-4">
+                    Choose your scent
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {SCENTS.map((scent) => (
+                      <button
+                        key={scent}
+                        onClick={() => setSelectedScent(scent)}
+                        className={`px-4 py-2.5 border text-[11px] font-400 tracking-[0.08em] transition-all duration-200 ${
+                          selectedScent === scent
+                            ? "border-black bg-black text-white"
+                            : "border-[#E8E4DF] text-black hover:border-black"
+                        }`}
+                      >
+                        {scent}
+                      </button>
+                    ))}
+                  </div>
+                  {!selectedScent && (
+                    <p className="text-[11px] text-[#B8B0A8] mt-3 font-300">
+                      Please select a scent to continue.
+                    </p>
+                  )}
+                </div>
+              )}
+
               {/* Add to Bag */}
               <motion.button
                 onClick={handleAddToBag}
                 whileTap={{ scale: 0.99 }}
+                disabled={isConcretePotCandle && !selectedScent}
                 className={`w-full py-5 text-[11px] font-500 tracking-[0.22em] uppercase transition-all duration-300 mb-12 ${
                   added
                     ? "bg-[#2C2C2C] text-white"
+                    : isConcretePotCandle && !selectedScent
+                    ? "bg-[#E8E4DF] text-[#B8B0A8] cursor-not-allowed"
                     : "bg-black text-white hover:bg-[#2C2C2C]"
                 }`}
               >
