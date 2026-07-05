@@ -90,7 +90,7 @@ export default function ProductPage({ params }: Props) {
   ];
 
   return (
-    <div className="pt-32 lg:pt-[104px] min-h-screen bg-white">
+    <div className="pt-32 min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pb-32">
 
         {/* Mobile-only back link above image */}
