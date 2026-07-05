@@ -48,7 +48,7 @@ export default function ProductPage({ params }: Props) {
     setAccordionOpen((prev) => (prev === key ? null : key));
 
   const ACCORDION_ITEMS = [
-    {
+    ...(product.scentNotes ? [{
       key: "notes",
       label: "Scent Notes",
       content: (
@@ -59,13 +59,13 @@ export default function ProductPage({ params }: Props) {
                 {layer}
               </span>
               <p className="text-[13px] font-300 text-black leading-relaxed">
-                {product.scentNotes[layer].join(" · ")}
+                {product.scentNotes?.[layer].join(" · ")}
               </p>
             </div>
           ))}
         </div>
       ),
-    },
+    }] : []),
     {
       key: "details",
       label: "Product Details",
@@ -181,27 +181,6 @@ export default function ProductPage({ params }: Props) {
                 {product.description}
               </p>
 
-              {/* Size selector — only show if multiple sizes */}
-              {product.sizes.length > 1 && (
-                <div className="flex gap-3 mb-10">
-                  {product.sizes.map((size) => (
-                    <button
-                      key={size.sku}
-                      onClick={() => setSelectedSize(size)}
-                      className={`flex-1 py-4 px-4 border text-[11px] font-400 tracking-[0.1em] uppercase transition-all duration-200 ${
-                        selectedSize.sku === size.sku
-                          ? "border-black bg-black text-white"
-                          : "border-[#E8E4DF] text-black hover:border-black"
-                      }`}
-                    >
-                      <span className="block">{size.label}</span>
-                      <span className="block opacity-60 mt-0.5 normal-case tracking-normal text-[10px]">
-                        {size.volume}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              )}
 
               {/* Scent selector — Concrete Pot Candles only */}
               {isConcretePotCandle && (
