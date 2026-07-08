@@ -25,7 +25,7 @@ export default function Hero() {
         className="absolute inset-0 will-change-transform"
       >
         <Image
-          src="https://images.unsplash.com/photo-1636714507452-48716cfa1818?w=1800&q=85"
+          src="/hero-bg.jpg"
           alt="Jaloux Du Vide luxury candle and reed diffuser"
           fill
           priority

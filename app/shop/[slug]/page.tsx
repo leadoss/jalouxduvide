@@ -104,7 +104,7 @@ export default function ProductPage({ params }: Props) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-24">
 
           {/* Image gallery */}
           <FadeIn direction="none">
@@ -134,12 +134,12 @@ export default function ProductPage({ params }: Props) {
                 {/* Badges */}
                 <div className="absolute top-5 left-5 flex gap-2">
                   {product.isBestseller && (
-                    <span className="bg-white text-black text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                    <span className="bg-white text-black text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1 rounded-full">
                       Bestseller
                     </span>
                   )}
                   {product.isNew && (
-                    <span className="bg-black text-white text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                    <span className="bg-black text-white text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1 rounded-full">
                       New
                     </span>
                   )}
@@ -150,7 +150,7 @@ export default function ProductPage({ params }: Props) {
 
           {/* Product info */}
           <FadeIn direction="left" delay={0.1}>
-            <div className="lg:sticky lg:top-32">
+            <div className="lg:sticky lg:top-32 pt-10 lg:pt-0">
 
               {/* Back link */}
               <Link
@@ -162,30 +162,30 @@ export default function ProductPage({ params }: Props) {
               </Link>
 
               {/* Name + price */}
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <h1 className="text-[42px] lg:text-[52px] font-300 leading-none tracking-[-0.01em] text-black">
+              <div className="flex items-start justify-between gap-4" style={{ marginBottom: "20px" }}>
+                <h1 className="text-[34px] lg:text-[52px] font-300 leading-[1.15] tracking-[-0.01em] text-black">
                   {product.name}
                 </h1>
-                <span className="text-[22px] font-300 text-black mt-2 flex-shrink-0">
+                <span className="text-[24px] font-300 text-black mt-1 flex-shrink-0">
                   ${selectedSize.price}
                 </span>
               </div>
 
               {/* Subtitle */}
-              <p className="text-[14px] font-300 text-[#8A8075] mb-8 leading-snug">
+              <p className="text-[16px] font-300 text-[#8A8075] leading-relaxed" style={{ marginBottom: "36px" }}>
                 {product.subtitle}
               </p>
 
               {/* Description */}
-              <p className="text-[15px] font-300 text-black leading-[1.75] mb-8">
+              <p className="text-[17px] font-300 text-black leading-[1.9]" style={{ marginBottom: "52px" }}>
                 {product.description}
               </p>
 
               {/* Free sticks perk — Diffusers only */}
               {product.type === "Diffuser" && (
-                <div className="flex items-center gap-2 mb-6 px-4 py-3 bg-[#F5F1EA] border border-[#E8E4DF]">
-                  <span className="text-[13px]">🎁</span>
-                  <p className="text-[13px] font-400 text-black">
+                <div className="flex items-center gap-4 px-5 bg-[#F5F1EA] border border-[#E8E4DF]" style={{ paddingTop: "18px", paddingBottom: "18px", marginBottom: "44px" }}>
+                  <span className="text-[18px]">🎁</span>
+                  <p className="text-[15px] font-400 text-black leading-relaxed">
                     Includes <span className="font-600">4 free reed sticks</span> with every order
                   </p>
                 </div>
@@ -193,23 +193,23 @@ export default function ProductPage({ params }: Props) {
 
               {/* Low stock warning */}
               {product.stock !== undefined && product.stock <= 3 && (
-                <p className="text-[13px] font-500 text-red-600 mb-6">
+                <p className="text-[15px] font-500 text-red-600" style={{ marginBottom: "44px" }}>
                   ⚠ Only {product.stock} left in stock — order soon
                 </p>
               )}
 
               {/* Scent selector — Concrete Pot Candles only */}
               {isConcretePotCandle && (
-                <div className="mb-10">
-                  <p className="text-[10px] font-500 tracking-[0.16em] uppercase text-[#B8B0A8] mb-4">
+                <div style={{ marginBottom: "52px" }}>
+                  <p className="text-[12px] font-500 tracking-[0.16em] uppercase text-[#B8B0A8]" style={{ marginBottom: "20px" }}>
                     Choose your scent
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {SCENTS.map((scent) => (
                       <button
                         key={scent}
                         onClick={() => setSelectedScent(scent)}
-                        className={`px-4 py-2.5 border text-[11px] font-400 tracking-[0.08em] transition-all duration-200 ${
+                        className={`px-5 py-3 border text-[14px] font-400 tracking-[0.08em] transition-all duration-200 ${
                           selectedScent === scent
                             ? "border-black bg-black text-white"
                             : "border-[#E8E4DF] text-black hover:border-black"
@@ -220,7 +220,7 @@ export default function ProductPage({ params }: Props) {
                     ))}
                   </div>
                   {!selectedScent && (
-                    <p className="text-[11px] text-[#B8B0A8] mt-3 font-300">
+                    <p className="text-[14px] text-[#B8B0A8] font-300" style={{ marginTop: "16px" }}>
                       Please select a scent to continue.
                     </p>
                   )}
@@ -232,7 +232,8 @@ export default function ProductPage({ params }: Props) {
                 onClick={handleAddToBag}
                 whileTap={{ scale: 0.99 }}
                 disabled={isConcretePotCandle && !selectedScent}
-                className={`block mx-auto px-14 py-4 rounded-full text-[13px] font-500 tracking-[0.18em] uppercase transition-all duration-300 mb-12 ${
+                style={{ display: "block", marginLeft: "auto", marginRight: "auto", marginBottom: "60px", paddingLeft: "64px", paddingRight: "64px", paddingTop: "20px", paddingBottom: "20px" }}
+                className={`rounded-full text-[15px] font-500 tracking-[0.18em] uppercase transition-all duration-300 ${
                   added
                     ? "bg-[#2C2C2C] text-white"
                     : isConcretePotCandle && !selectedScent
@@ -250,7 +251,8 @@ export default function ProductPage({ params }: Props) {
                     <button
                       onClick={() => toggleAccordion(item.key)}
                       aria-expanded={accordionOpen === item.key}
-                      className="flex items-center justify-between w-full py-5 text-[12px] font-400 tracking-[0.1em] uppercase text-black hover:text-[#8A8075] transition-colors duration-200"
+                      style={{ paddingTop: "28px", paddingBottom: "28px" }}
+                      className="flex items-center justify-between w-full text-[14px] font-400 tracking-[0.1em] uppercase text-black hover:text-[#8A8075] transition-colors duration-200"
                     >
                       {item.label}
                       <motion.div

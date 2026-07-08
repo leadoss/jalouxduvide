@@ -161,12 +161,12 @@ function ShopContent() {
                         {(product.isBestseller || product.isNew) && (
                           <div className="absolute top-4 left-4 flex gap-2">
                             {product.isBestseller && (
-                              <span className="bg-white text-black text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                              <span className="bg-white text-black text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1 rounded-full">
                                 Bestseller
                               </span>
                             )}
                             {product.isNew && (
-                              <span className="bg-black text-white text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                              <span className="bg-black text-white text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1 rounded-full">
                                 New
                               </span>
                             )}
