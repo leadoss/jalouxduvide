@@ -85,7 +85,7 @@ export default function ScentNotes() {
                 <br />
                 <span className="italic font-600">worth knowing.</span>
               </h2>
-              <p className="text-stone font-300 text-lg leading-relaxed mb-4">
+              <p className="text-[#9333EA] font-300 text-lg leading-relaxed mb-4">
                 The story of a fragrance is told by its ingredients.
                 Tap a note below to discover its origin and character.
               </p>
@@ -109,13 +109,13 @@ export default function ScentNotes() {
                     />
                     <div>
                       <p className="text-lg font-500">{active.name}</p>
-                      <p className="text-lg font-300 text-stone">{active.origin}</p>
+                      <p className="text-lg font-300 text-[#9333EA]">{active.origin}</p>
                     </div>
-                    <span className="ml-auto text-[16px] font-400 tracking-[0.1em] uppercase px-3 py-1 border border-[#E8E4DF] text-stone">
+                    <span className="ml-auto text-[16px] font-400 tracking-[0.1em] uppercase px-3 py-1 border border-[#E8E4DF] text-[#9333EA]">
                       {active.layer} Note
                     </span>
                   </div>
-                  <p className="text-lg font-300 text-charcoal leading-relaxed">
+                  <p className="text-lg font-300 text-[#7C3AED] leading-relaxed">
                     {active.description}
                   </p>
                 </motion.div>
@@ -137,7 +137,7 @@ export default function ScentNotes() {
                   className={`flex items-center gap-4 w-full px-6 py-5 border transition-all duration-200 text-left ${
                     active?.id === note.id
                       ? "border-black bg-black text-cream"
-                      : "border-[#E8E4DF] bg-white text-charcoal hover:border-[#C4BDB6]"
+                      : "border-[#E8E4DF] bg-white text-[#7C3AED] hover:border-[#C4BDB6]"
                   }`}
                 >
                   <span

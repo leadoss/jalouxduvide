@@ -177,10 +177,26 @@ export default function ProductPage({ params }: Props) {
               </p>
 
               {/* Description */}
-              <p className="text-[15px] font-300 text-black leading-[1.75] mb-12">
+              <p className="text-[15px] font-300 text-black leading-[1.75] mb-8">
                 {product.description}
               </p>
 
+              {/* Free sticks perk — Diffusers only */}
+              {product.type === "Diffuser" && (
+                <div className="flex items-center gap-2 mb-6 px-4 py-3 bg-[#F5F1EA] border border-[#E8E4DF]">
+                  <span className="text-[13px]">🎁</span>
+                  <p className="text-[13px] font-400 text-black">
+                    Includes <span className="font-600">4 free reed sticks</span> with every order
+                  </p>
+                </div>
+              )}
+
+              {/* Low stock warning */}
+              {product.stock !== undefined && product.stock <= 3 && (
+                <p className="text-[13px] font-500 text-red-600 mb-6">
+                  ⚠ Only {product.stock} left in stock — order soon
+                </p>
+              )}
 
               {/* Scent selector — Concrete Pot Candles only */}
               {isConcretePotCandle && (
@@ -216,11 +232,11 @@ export default function ProductPage({ params }: Props) {
                 onClick={handleAddToBag}
                 whileTap={{ scale: 0.99 }}
                 disabled={isConcretePotCandle && !selectedScent}
-                className={`w-full py-5 text-[11px] font-500 tracking-[0.22em] uppercase transition-all duration-300 mb-12 ${
+                className={`block mx-auto px-14 py-4 rounded-full text-[13px] font-500 tracking-[0.18em] uppercase transition-all duration-300 mb-12 ${
                   added
                     ? "bg-[#2C2C2C] text-white"
                     : isConcretePotCandle && !selectedScent
-                    ? "bg-[#E8E4DF] text-[#B8B0A8] cursor-not-allowed"
+                    ? "bg-[#E8E4DF] text-[#C4B8D8] cursor-not-allowed"
                     : "bg-black text-white hover:bg-[#2C2C2C]"
                 }`}
               >

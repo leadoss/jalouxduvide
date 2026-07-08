@@ -42,6 +42,7 @@ export type Product = {
   isNew: boolean;
   burnTime?: string;
   scents?: string[];
+  stock?: number;
   collection: "Diffusers" | "Concrete Pot Candles" | "Concrete Candle Refills" | "Soy Wax Candles";
 };
 
@@ -69,6 +70,7 @@ const diffusers: Product[] = [
     hoverImage: "/products/diffusers/eden.png",
     isBestseller: true,
     isNew: false,
+    stock: 1,
     collection: "Diffusers",
   },
   {

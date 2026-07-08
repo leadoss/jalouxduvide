@@ -76,7 +76,7 @@ function ShopContent() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-8 text-left">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[18px] font-300 tracking-[0.12em] uppercase text-[#B8B0A8] hover:text-black transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-[18px] font-300 tracking-[0.12em] uppercase text-[#C084FC] hover:text-black transition-colors duration-200"
           >
             <ArrowLeft size={11} strokeWidth={1.5} />
             Home
@@ -102,7 +102,7 @@ function ShopContent() {
                   className={`text-left py-2 text-[18px] tracking-[0.1em] uppercase transition-colors duration-200 ${
                     active
                       ? "text-black font-400"
-                      : "text-[#B8B0A8] font-300 hover:text-black"
+                      : "text-[#C084FC] font-300 hover:text-black"
                   }`}
                 >
                   {c === "All" ? "All Products" : c}
@@ -116,7 +116,7 @@ function ShopContent() {
         <div className="flex-1 min-w-0">
           {filtered.length === 0 ? (
             <div className="py-32 text-center">
-              <p className="text-[18px] font-300 tracking-[0.1em] uppercase text-[#B8B0A8] mb-8">
+              <p className="text-[18px] font-300 tracking-[0.1em] uppercase text-[#C084FC] mb-8">
                 No products found
               </p>
               <button
@@ -198,7 +198,7 @@ function ShopContent() {
                                 className={`w-full py-2 text-[16px] font-500 tracking-[0.22em] uppercase transition-all duration-200 ${
                                   selectedScents[product.id]
                                     ? "bg-black text-white"
-                                    : "bg-[#E8E4DF] text-[#B8B0A8] cursor-not-allowed"
+                                    : "bg-[#E8E4DF] text-[#C084FC] cursor-not-allowed"
                                 }`}
                               >
                                 {addedId === product.id ? "Added âœ“" : "Add to Bag"}
@@ -222,11 +222,11 @@ function ShopContent() {
                     <div className="mt-5 flex items-baseline justify-between gap-3">
                       <Link
                         href={`/shop/${product.slug}`}
-                        className="text-[16px] font-300 tracking-[0.06em] text-black hover:text-[#8A8075] transition-colors duration-200"
+                        className="text-[16px] font-300 tracking-[0.06em] text-black hover:text-[#9333EA] transition-colors duration-200"
                       >
                         {product.name}
                       </Link>
-                      <span className="text-[16px] font-300 text-[#8A8075] flex-shrink-0">
+                      <span className="text-[16px] font-300 text-[#9333EA] flex-shrink-0">
                         ${product.sizes[0].price}
                       </span>
                     </div>

@@ -36,7 +36,7 @@ export default function Header() {
           className="bg-[#1A0D09] text-white/85 text-[13px] font-300 tracking-[0.28em] uppercase text-center"
           style={{ paddingTop: "10px", paddingBottom: "10px" }}
         >
-          Free Shipping on Orders Over $60
+          Free Delivery on Orders Over $60
         </div>
 
         {/* Nav bar */}
@@ -135,7 +135,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="text-xl font-300 text-black hover:text-[#8A8075] transition-colors duration-200"
+                      className="text-xl font-300 text-black hover:text-[#9333EA] transition-colors duration-200"
                     >
                       {link.label}
                     </Link>

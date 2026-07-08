@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -61,12 +61,12 @@ export default function CartDrawer() {
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200">
               <h2 className="text-[16px] font-600 text-black tracking-normal">
-                Cart {totalQty > 0 && <span className="text-gray-500 font-400">({totalQty})</span>}
+                Cart {totalQty > 0 && <span className="text-[#9333EA] font-400">({totalQty})</span>}
               </h2>
               <button
                 onClick={closeCart}
                 aria-label="Close cart"
-                className="p-1 text-gray-500 hover:text-black transition-colors"
+                className="p-1 text-[#9333EA] hover:text-black transition-colors"
               >
                 <X size={20} strokeWidth={1.5} />
               </button>
@@ -75,11 +75,11 @@ export default function CartDrawer() {
             {/* Free shipping bar */}
             {sub > 0 && (
               <div className="px-5 py-3 bg-gray-50 border-b border-gray-200">
-                <p className="text-[13px] text-gray-600 mb-2">
+                <p className="text-[13px] text-[#7C3AED] mb-2">
                   {remaining === 0 ? (
-                    <span className="font-500 text-black">🎉 You've unlocked free shipping!</span>
+                    <span className="font-500 text-black">🎉 You've unlocked free delivery!</span>
                   ) : (
-                    <>You're <span className="font-500 text-black">${remaining.toFixed(0)}</span> away from free shipping</>
+                    <>You're <span className="font-500 text-black">${remaining.toFixed(0)}</span> away from free delivery</>
                   )}
                 </p>
                 <div className="h-1 w-full bg-gray-200 rounded-full overflow-hidden">
@@ -97,7 +97,7 @@ export default function CartDrawer() {
             <div className="flex-1 overflow-y-auto">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full gap-4 px-6 text-center">
-                  <p className="text-[16px] text-gray-500">Your cart is empty</p>
+                  <p className="text-[16px] text-[#9333EA]">Your cart is empty</p>
                   <button
                     onClick={closeCart}
                     className="text-[14px] font-500 text-black underline underline-offset-2 hover:opacity-60 transition-opacity"
@@ -127,7 +127,7 @@ export default function CartDrawer() {
                             <p className="text-[14px] font-500 text-black leading-snug truncate">
                               {item.product.name}
                             </p>
-                            <p className="text-[13px] text-gray-400 mt-0.5">
+                            <p className="text-[13px] text-[#9333EA] mt-0.5">
                               {item.size.volume}
                             </p>
                           </div>
@@ -142,7 +142,7 @@ export default function CartDrawer() {
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
                               aria-label="Decrease"
-                              className="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-black transition-colors"
+                              className="w-8 h-8 flex items-center justify-center text-[#7C3AED] hover:text-black transition-colors"
                             >
                               <Minus size={12} strokeWidth={2} />
                             </button>
@@ -152,7 +152,7 @@ export default function CartDrawer() {
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
                               aria-label="Increase"
-                              className="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-black transition-colors"
+                              className="w-8 h-8 flex items-center justify-center text-[#7C3AED] hover:text-black transition-colors"
                             >
                               <Plus size={12} strokeWidth={2} />
                             </button>
@@ -161,7 +161,7 @@ export default function CartDrawer() {
                           {/* Remove */}
                           <button
                             onClick={() => removeItem(item.id)}
-                            className="text-[12px] text-gray-400 hover:text-black transition-colors underline underline-offset-2"
+                            className="text-[12px] text-[#9333EA] hover:text-black transition-colors underline underline-offset-2"
                           >
                             Remove
                           </button>
@@ -177,10 +177,10 @@ export default function CartDrawer() {
             {items.length > 0 && (
               <div className="border-t border-gray-200 bg-white px-5 py-5 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[14px] text-gray-600">Subtotal</span>
+                  <span className="text-[14px] text-[#7C3AED]">Subtotal</span>
                   <span className="text-[16px] font-600 text-black">${sub.toFixed(2)}</span>
                 </div>
-                <p className="text-[12px] text-gray-400">
+                <p className="text-[12px] text-[#9333EA]">
                   Taxes and shipping calculated at checkout.
                 </p>
                 <Link
@@ -191,7 +191,7 @@ export default function CartDrawer() {
                 </Link>
                 <button
                   onClick={closeCart}
-                  className="block w-full text-center text-[13px] text-gray-500 hover:text-black transition-colors duration-200 py-1"
+                  className="block w-full text-center text-[13px] text-[#9333EA] hover:text-black transition-colors duration-200 py-1"
                 >
                   Continue shopping
                 </button>

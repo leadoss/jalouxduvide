@@ -48,13 +48,13 @@ export default function Testimonials() {
                   ))}
                 </div>
                 <blockquote>
-                  <p className="text-lg font-300 text-charcoal leading-relaxed">
+                  <p className="text-lg font-300 text-[#7C3AED] leading-relaxed">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                 </blockquote>
                 <footer className="flex items-center gap-3 mt-auto pt-4 border-t border-[#E8E4DF]">
                   <div className="w-8 h-8 rounded-full bg-[#E8E4DF] flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-500 text-stone">{t.author.charAt(0)}</span>
+                    <span className="text-lg font-500 text-[#9333EA]">{t.author.charAt(0)}</span>
                   </div>
                   <p className="text-lg font-400 text-black">{t.author}</p>
                 </footer>
