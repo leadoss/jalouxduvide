@@ -87,4 +87,4 @@ export const useCartStore = create<CartStore>()(
   )
 );
 
-export const FREE_SHIPPING_THRESHOLD = 120;
+export const FREE_SHIPPING_THRESHOLD = 60;

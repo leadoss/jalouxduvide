@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -21,7 +21,7 @@ export default function FeaturedCollections() {
           <FadeIn delay={0.1} direction="left">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 text-xs font-500 tracking-[0.12em] uppercase text-navy underline-reveal"
+              className="inline-flex items-center gap-2 text-lg font-500 tracking-[0.12em] uppercase text-navy underline-reveal"
             >
               View All <ArrowRight size={14} strokeWidth={1.5} />
             </Link>
@@ -49,7 +49,7 @@ export default function FeaturedCollections() {
                   <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
                     <div>
                       <p className="text-cream text-xl font-500">{col.label}</p>
-                      <p className="text-cream/60 text-xs font-300 mt-1">
+                      <p className="text-cream/60 text-lg font-300 mt-1">
                         {col.count} products
                       </p>
                     </div>

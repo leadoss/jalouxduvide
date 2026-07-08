@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,7 +26,7 @@ export default function Newsletter() {
               Stay in the loop
             </h2>
             <p className="text-cream/50 font-300 leading-relaxed mb-10">
-              New arrivals, exclusive offers, and quiet notes from our studio — delivered to your inbox.
+              New arrivals, exclusive offers, and quiet notes from our studio â€” delivered to your inbox.
             </p>
           </FadeIn>
 
@@ -36,7 +36,7 @@ export default function Newsletter() {
                 <div className="w-12 h-12 rounded-full border border-cream/20 flex items-center justify-center">
                   <Check size={18} strokeWidth={1.5} className="text-cream" />
                 </div>
-                <p className="text-cream/70 font-300 text-sm">You&apos;re on the list. Welcome.</p>
+                <p className="text-cream/70 font-300 text-lg">You&apos;re on the list. Welcome.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="w-full max-w-md">
@@ -57,7 +57,7 @@ export default function Newsletter() {
                     onBlur={() => setFocused(false)}
                     placeholder="your@email.com"
                     required
-                    className="flex-1 bg-transparent text-cream placeholder:text-cream/25 text-sm font-300 px-5 py-4 focus:outline-none"
+                    className="flex-1 bg-transparent text-cream placeholder:text-cream/25 text-lg font-300 px-5 py-4 focus:outline-none"
                   />
                   <button
                     type="submit"

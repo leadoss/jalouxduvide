@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Link from "next/link";
@@ -47,7 +47,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-cream/60 text-xs font-300 tracking-[0.2em] uppercase mb-6"
+            className="text-cream/60 text-lg font-300 tracking-[0.2em] uppercase mb-6"
           >
             Luxury Home Fragrance
           </motion.p>
@@ -77,7 +77,7 @@ export default function Hero() {
           className="absolute right-6 lg:right-12 bottom-0 flex flex-col items-center gap-3"
         >
           <div className="h-14 w-px bg-gradient-to-b from-cream/0 to-cream/40" />
-          <span className="text-cream/40 text-[10px] tracking-[0.2em] uppercase rotate-90 origin-center translate-y-6">
+          <span className="text-cream/40 text-[16px] tracking-[0.2em] uppercase rotate-90 origin-center translate-y-6">
             Scroll
           </span>
         </motion.div>

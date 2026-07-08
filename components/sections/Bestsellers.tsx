@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Link from "next/link";
@@ -27,7 +27,7 @@ export default function Bestsellers() {
           <FadeIn delay={0.1} direction="left">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 text-xs font-500 tracking-[0.12em] uppercase text-navy underline-reveal"
+              className="inline-flex items-center gap-2 text-lg font-500 tracking-[0.12em] uppercase text-navy underline-reveal"
             >
               All Products <ArrowRight size={14} strokeWidth={1.5} />
             </Link>
@@ -63,7 +63,7 @@ export default function Bestsellers() {
                     {/* Hover image */}
                     <Image
                       src={product.hoverImage}
-                      alt={`${product.name} — alternate view`}
+                      alt={`${product.name} â€” alternate view`}
                       fill
                       className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       sizes="320px"
@@ -72,12 +72,12 @@ export default function Bestsellers() {
                     {/* Badges */}
                     <div className="absolute top-4 left-4 flex gap-2">
                       {product.isBestseller && (
-                        <span className="bg-cream text-black text-[10px] font-500 tracking-[0.1em] uppercase px-3 py-1 rounded-full">
+                        <span className="bg-cream text-black text-[16px] font-500 tracking-[0.1em] uppercase px-3 py-1 rounded-full">
                           Bestseller
                         </span>
                       )}
                       {product.isNew && (
-                        <span className="bg-navy text-cream text-[10px] font-500 tracking-[0.1em] uppercase px-3 py-1 rounded-full">
+                        <span className="bg-navy text-cream text-[16px] font-500 tracking-[0.1em] uppercase px-3 py-1 rounded-full">
                           New
                         </span>
                       )}
@@ -100,11 +100,11 @@ export default function Bestsellers() {
                 <div className="flex items-start justify-between mt-5">
                   <Link
                     href={`/shop/${product.slug}`}
-                    className="block text-base font-500 text-black hover:text-navy transition-colors duration-200"
+                    className="block text-lg font-500 text-black hover:text-navy transition-colors duration-200"
                   >
                     {product.name}
                   </Link>
-                  <p className="text-base font-500 text-black ml-4 flex-shrink-0">
+                  <p className="text-lg font-500 text-black ml-4 flex-shrink-0">
                     ${product.sizes[0].price}
                   </p>
                 </div>

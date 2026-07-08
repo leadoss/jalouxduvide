@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -25,7 +25,7 @@ const NOTES: Note[] = [
   {
     id: "neroli",
     layer: "Top",
-    name: "Néroli",
+    name: "NÃ©roli",
     origin: "Morocco",
     description: "Distilled from the blossom of the bitter orange tree. Delicate, slightly honeyed, and impossibly elegant.",
     color: "#C8A882",
@@ -108,14 +108,14 @@ export default function ScentNotes() {
                       style={{ backgroundColor: active.color }}
                     />
                     <div>
-                      <p className="text-base font-500">{active.name}</p>
-                      <p className="text-xs font-300 text-stone">{active.origin}</p>
+                      <p className="text-lg font-500">{active.name}</p>
+                      <p className="text-lg font-300 text-stone">{active.origin}</p>
                     </div>
-                    <span className="ml-auto text-[10px] font-400 tracking-[0.1em] uppercase px-3 py-1 border border-[#E8E4DF] text-stone">
+                    <span className="ml-auto text-[16px] font-400 tracking-[0.1em] uppercase px-3 py-1 border border-[#E8E4DF] text-stone">
                       {active.layer} Note
                     </span>
                   </div>
-                  <p className="text-sm font-300 text-charcoal leading-relaxed">
+                  <p className="text-lg font-300 text-charcoal leading-relaxed">
                     {active.description}
                   </p>
                 </motion.div>
@@ -144,8 +144,8 @@ export default function ScentNotes() {
                     className="w-3.5 h-3.5 rounded-full flex-shrink-0"
                     style={{ backgroundColor: note.color }}
                   />
-                  <span className="text-base font-300 flex-1">{note.name}</span>
-                  <span className="text-sm font-300 opacity-40">
+                  <span className="text-lg font-300 flex-1">{note.name}</span>
+                  <span className="text-lg font-300 opacity-40">
                     {note.origin.split(",")[0]}
                   </span>
                 </motion.button>

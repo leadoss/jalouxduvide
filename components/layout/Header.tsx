@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -33,10 +33,10 @@ export default function Header() {
       >
         {/* Announcement bar */}
         <div
-          className="bg-[#1A0D09] text-white/85 text-[10px] font-300 tracking-[0.28em] uppercase text-center"
+          className="bg-[#1A0D09] text-white/85 text-[13px] font-300 tracking-[0.28em] uppercase text-center"
           style={{ paddingTop: "10px", paddingBottom: "10px" }}
         >
-          Free Shipping on Orders Over $120
+          Free Shipping on Orders Over $60
         </div>
 
         {/* Nav bar */}
@@ -51,7 +51,7 @@ export default function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="text-[11px] font-300 tracking-[0.14em] uppercase text-[#2A2A2A] hover:text-black transition-colors duration-200"
+                      className="text-[14px] font-300 tracking-[0.14em] uppercase text-[#2A2A2A] hover:text-black transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -87,7 +87,7 @@ export default function Header() {
                       key={count}
                       initial={{ scale: 0.5, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-navy text-cream text-[9px] font-500 flex items-center justify-center"
+                      className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-navy text-cream text-[10px] font-500 flex items-center justify-center"
                     >
                       {count}
                     </motion.span>
@@ -99,7 +99,7 @@ export default function Header() {
         </header>
       </motion.div>
 
-      {/* Mobile drawer — slides from left */}
+      {/* Mobile drawer â€” slides from left */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -119,7 +119,7 @@ export default function Header() {
               className="fixed top-0 left-0 bottom-0 z-[60] w-72 bg-white flex flex-col"
             >
               <div className="flex items-center justify-between px-6 h-16 border-b border-[#E8E4DF]">
-                <span className="text-[10px] font-500 tracking-[0.24em] uppercase">Menu</span>
+                <span className="text-[16px] font-500 tracking-[0.24em] uppercase">Menu</span>
                 <button onClick={() => setMenuOpen(false)} aria-label="Close menu" className="p-2">
                   <X size={18} strokeWidth={1.5} />
                 </button>

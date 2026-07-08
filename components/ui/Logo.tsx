@@ -1,4 +1,4 @@
-interface LogoMarkProps {
+﻿interface LogoMarkProps {
   size?: number;
   className?: string;
 }
@@ -14,14 +14,14 @@ export function LogoMark({ size = 40, className }: LogoMarkProps) {
       aria-hidden="true"
       className={className}
     >
-      {/* Top pointed oval — left edge */}
+      {/* Top pointed oval â€” left edge */}
       <path
         d="M45,5 C40,5 34,11 34,20 C34,29 39,36 45,40"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      {/* Top pointed oval — right edge */}
+      {/* Top pointed oval â€” right edge */}
       <path
         d="M45,5 C50,5 56,11 56,20 C56,29 51,36 45,40"
         stroke="currentColor"
@@ -36,7 +36,7 @@ export function LogoMark({ size = 40, className }: LogoMarkProps) {
         strokeLinecap="round"
         fill="none"
       />
-      {/* Strand B: mirror — arcs RIGHT then sweeps back LEFT */}
+      {/* Strand B: mirror â€” arcs RIGHT then sweeps back LEFT */}
       <path
         d="M45,40 C55,45 80,59 80,76 C80,93 54,99 45,102 C36,105 16,117 16,132 C16,141 30,145 45,146"
         stroke="currentColor"
@@ -44,7 +44,7 @@ export function LogoMark({ size = 40, className }: LogoMarkProps) {
         strokeLinecap="round"
         fill="none"
       />
-      {/* Hanging teardrop — solid fill */}
+      {/* Hanging teardrop â€” solid fill */}
       <path
         d="M45,146 C41,146 36,152 36,160 C36,168 40,174 45,174 C50,174 54,168 54,160 C54,152 49,146 45,146"
         fill="currentColor"
@@ -66,7 +66,7 @@ export default function Logo({ markOnly = false, size = 40, className, textClass
       <LogoMark size={size} />
       {!markOnly && (
         <span
-          className={`text-sm font-500 tracking-[0.22em] uppercase ${textClassName ?? ""}`}
+          className={`text-lg font-500 tracking-[0.22em] uppercase ${textClassName ?? ""}`}
         >
           Jaloux Du Vide
         </span>

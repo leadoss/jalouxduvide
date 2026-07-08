@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -58,7 +58,7 @@ export default function BrandStory() {
                 humming softly in the corner, filling your space with warmth.
               </p>
               <p className="text-cream/60 font-300 leading-relaxed mb-8">
-                Every piece we craft is made with intention — the finest
+                Every piece we craft is made with intention â€” the finest
                 ingredients, poured by hand. We don't just create fragrances;
                 we create feelings. The comfort of coming home. The calm before
                 sleep. The joy of a space that finally feels like you.
@@ -74,7 +74,7 @@ export default function BrandStory() {
                 {STATS.map((stat) => (
                   <div key={stat.label}>
                     <p className="text-3xl font-600 text-cream mb-1">{stat.value}</p>
-                    <p className="text-xs font-300 text-cream/40 leading-snug">{stat.label}</p>
+                    <p className="text-lg font-300 text-cream/40 leading-snug">{stat.label}</p>
                   </div>
                 ))}
               </div>

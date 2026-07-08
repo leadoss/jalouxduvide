@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -76,7 +76,7 @@ function ShopContent() {
         <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-8 text-left">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[11px] font-300 tracking-[0.12em] uppercase text-[#B8B0A8] hover:text-black transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-[18px] font-300 tracking-[0.12em] uppercase text-[#B8B0A8] hover:text-black transition-colors duration-200"
           >
             <ArrowLeft size={11} strokeWidth={1.5} />
             Home
@@ -99,7 +99,7 @@ function ShopContent() {
                 <button
                   key={c}
                   onClick={() => handleCollectionChange(c)}
-                  className={`text-left py-2 text-[12px] tracking-[0.1em] uppercase transition-colors duration-200 ${
+                  className={`text-left py-2 text-[18px] tracking-[0.1em] uppercase transition-colors duration-200 ${
                     active
                       ? "text-black font-400"
                       : "text-[#B8B0A8] font-300 hover:text-black"
@@ -116,12 +116,12 @@ function ShopContent() {
         <div className="flex-1 min-w-0">
           {filtered.length === 0 ? (
             <div className="py-32 text-center">
-              <p className="text-[12px] font-300 tracking-[0.1em] uppercase text-[#B8B0A8] mb-8">
+              <p className="text-[18px] font-300 tracking-[0.1em] uppercase text-[#B8B0A8] mb-8">
                 No products found
               </p>
               <button
                 onClick={() => handleCollectionChange("All")}
-                className="text-[10px] font-400 tracking-[0.18em] uppercase border-b border-black pb-0.5"
+                className="text-[16px] font-400 tracking-[0.18em] uppercase border-b border-black pb-0.5"
               >
                 View All
               </button>
@@ -161,12 +161,12 @@ function ShopContent() {
                         {(product.isBestseller || product.isNew) && (
                           <div className="absolute top-4 left-4 flex gap-2">
                             {product.isBestseller && (
-                              <span className="bg-white text-black text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                              <span className="bg-white text-black text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
                                 Bestseller
                               </span>
                             )}
                             {product.isNew && (
-                              <span className="bg-black text-white text-[8px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
+                              <span className="bg-black text-white text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1">
                                 New
                               </span>
                             )}
@@ -182,7 +182,7 @@ function ShopContent() {
                                   <button
                                     key={scent}
                                     onClick={(e) => handleScentSelect(product.id, scent, e)}
-                                    className={`px-2 py-1 border text-[8px] font-400 tracking-[0.06em] transition-all duration-150 ${
+                                    className={`px-2 py-1 border text-[18px] font-400 tracking-[0.06em] transition-all duration-150 ${
                                       selectedScents[product.id] === scent
                                         ? "border-black bg-black text-white"
                                         : "border-[#E8E4DF] text-black hover:border-black"
@@ -195,22 +195,22 @@ function ShopContent() {
                               <button
                                 onClick={(e) => handleAddToBag(product, e)}
                                 disabled={!selectedScents[product.id]}
-                                className={`w-full py-2 text-[9px] font-500 tracking-[0.22em] uppercase transition-all duration-200 ${
+                                className={`w-full py-2 text-[16px] font-500 tracking-[0.22em] uppercase transition-all duration-200 ${
                                   selectedScents[product.id]
                                     ? "bg-black text-white"
                                     : "bg-[#E8E4DF] text-[#B8B0A8] cursor-not-allowed"
                                 }`}
                               >
-                                {addedId === product.id ? "Added ✓" : "Add to Bag"}
+                                {addedId === product.id ? "Added âœ“" : "Add to Bag"}
                               </button>
                             </div>
                           ) : (
                             <div className="py-4 text-center">
                               <button
                                 onClick={(e) => handleAddToBag(product, e)}
-                                className="text-[9px] font-500 tracking-[0.22em] uppercase text-black"
+                                className="text-[16px] font-500 tracking-[0.22em] uppercase text-black"
                               >
-                                {addedId === product.id ? "Added ✓" : "Add to Bag"}
+                                {addedId === product.id ? "Added âœ“" : "Add to Bag"}
                               </button>
                             </div>
                           )}
@@ -222,11 +222,11 @@ function ShopContent() {
                     <div className="mt-5 flex items-baseline justify-between gap-3">
                       <Link
                         href={`/shop/${product.slug}`}
-                        className="text-[13px] font-300 tracking-[0.06em] text-black hover:text-[#8A8075] transition-colors duration-200"
+                        className="text-[16px] font-300 tracking-[0.06em] text-black hover:text-[#8A8075] transition-colors duration-200"
                       >
                         {product.name}
                       </Link>
-                      <span className="text-[13px] font-300 text-[#8A8075] flex-shrink-0">
+                      <span className="text-[16px] font-300 text-[#8A8075] flex-shrink-0">
                         ${product.sizes[0].price}
                       </span>
                     </div>
