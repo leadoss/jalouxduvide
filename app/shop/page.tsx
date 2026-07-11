@@ -15,7 +15,6 @@ const COLLECTIONS = [
   "Diffusers",
   "Concrete Pot Candles",
   "Concrete Candle Refills",
-  "Soy Wax Candles",
 ] as const;
 
 function ShopContent() {

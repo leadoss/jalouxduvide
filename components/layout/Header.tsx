@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { label: "Diffusers", href: "/shop?collection=Diffusers" },
   { label: "Concrete Candles", href: "/shop?collection=Concrete Pot Candles" },
   { label: "Refills", href: "/shop?collection=Concrete Candle Refills" },
-  { label: "Soy Candles", href: "/shop?collection=Soy Wax Candles" },
 ];
 
 export default function Header() {
