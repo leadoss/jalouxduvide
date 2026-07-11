@@ -64,7 +64,7 @@ export default function ProductPage({ params }: Props) {
       label: "Shipping & Returns",
       content: (
         <div className="pt-2 pb-6 space-y-3 text-[13px] font-300 text-[#6B635C] leading-relaxed">
-          <p>Free shipping on orders over $120. Standard delivery 3–5 business days.</p>
+          <p>Free delivery on orders over $60. Standard delivery 3–5 business days.</p>
           <p>Returns accepted within 30 days, unopened products only.</p>
         </div>
       ),
