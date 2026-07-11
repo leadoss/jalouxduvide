@@ -172,7 +172,7 @@ export default function ProductPage({ params }: Props) {
               </div>
 
               {/* Volume */}
-              <p className="text-[13px] font-300 text-[#9B9490] tracking-[0.06em] uppercase" style={{ marginBottom: "32px" }}>
+              <p className="text-[18px] font-400 text-black" style={{ marginBottom: "32px" }}>
                 {selectedSize.volume}
               </p>
 
