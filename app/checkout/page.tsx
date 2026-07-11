@@ -71,7 +71,7 @@ export default function CheckoutPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    const total = sub >= 60 ? sub : sub + 6;
+    const total = sub >= 60 ? sub : sub + 4;
 
     // Send order directly to Google Apps Script (works on any deployment)
     fetch("https://script.google.com/macros/s/AKfycbzafAck_vV7-2YpF6Snh-k4cJHZsOR1E4hgTDJACfzJ8ZxBpApJUPwb9E93NqVfVLZj/exec", {
@@ -89,7 +89,7 @@ export default function CheckoutPage() {
         payment: fields.payment === "whish" ? "Whish" : "Cash on Delivery",
         items: items.map((i) => `${i.product.name} x${i.quantity}`).join(", "),
         subtotal: `$${sub.toFixed(2)}`,
-        delivery: sub >= 60 ? "Free" : "$6.00",
+        delivery: sub >= 60 ? "Free" : "$4.00",
         total: `$${total.toFixed(2)}`,
       }),
     }).catch(() => {});
@@ -268,7 +268,7 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between text-[14px] font-500 text-black pt-3" style={{ borderTop: "1px solid #EEEAE6" }}>
                 <span>Total</span>
-                <span>${(sub >= 60 ? sub : sub + 6).toFixed(2)}</span>
+                <span>${(sub >= 60 ? sub : sub + 4).toFixed(2)}</span>
               </div>
             </div>
           </aside>
