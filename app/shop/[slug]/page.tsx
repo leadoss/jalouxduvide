@@ -127,6 +127,22 @@ export default function ProductPage({ params }: Props) {
                   )}
                 </div>
               </div>
+
+              {/* Thumbnail dots — only show if two distinct images */}
+              {product.image !== product.hoverImage && (
+                <div className="flex gap-2 mt-4 justify-center">
+                  {images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImage(i)}
+                      className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                        activeImage === i ? "bg-black scale-125" : "bg-[#D0CBC5]"
+                      }`}
+                      aria-label={`View image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </FadeIn>
 
