@@ -201,14 +201,14 @@ function ShopContent() {
                     </Link>
 
                     {/* Info */}
-                    <div className="mt-4 flex items-baseline justify-between gap-3">
+                    <div className="mt-3">
                       <Link
                         href={`/shop/${product.slug}`}
-                        className="text-[14px] font-400 text-black hover:text-[#555] transition-colors duration-200 leading-snug"
+                        className="block text-[14px] font-400 text-black hover:text-[#555] transition-colors duration-200"
                       >
                         {product.name}
                       </Link>
-                      <span className="text-[14px] font-400 text-black flex-shrink-0">
+                      <span className="block text-[14px] font-300 text-[#6B6B6B] mt-1">
                         ${product.sizes[0].price}
                       </span>
                     </div>
