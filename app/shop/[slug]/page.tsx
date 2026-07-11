@@ -171,11 +171,6 @@ export default function ProductPage({ params }: Props) {
                 </span>
               </div>
 
-              {/* Subtitle */}
-              <p className="text-[16px] font-300 text-[#8A8075] leading-relaxed" style={{ marginBottom: "36px" }}>
-                {product.subtitle}
-              </p>
-
               {/* Description */}
               <p className="text-[17px] font-300 text-black leading-[1.9]" style={{ marginBottom: "52px" }}>
                 {product.description}
