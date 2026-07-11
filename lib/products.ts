@@ -362,103 +362,11 @@ const concretePotCandles: Product[] = [
   },
 ];
 
-// ─── CONCRETE CANDLE REFILLS (5) ──────────────────────────────────────────────
-
-const concreteCandeRefills: Product[] = [
-  {
-    id: "r1",
-    slug: "refill-vanille",
-    name: "Vanille",
-    subtitle: "Rich & creamy vanilla refill",
-    type: "Concrete Candle Refill",
-    scentFamily: "Gourmand",
-    description: "Pure, unapologetic vanilla — rich, creamy, and endlessly comforting. The most-loved refill in the collection.",
-    story: "Sourced from Madagascar vanilla absolute, blended into a clean coconut-soy wax for a slow, even burn.",
-    sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-VAN-180" }],
-    image: "/products/refills/vanille.jpg",
-    hoverImage: "/products/refills/vanille.jpg",
-    isBestseller: true,
-    isNew: false,
-    burnTime: "40 hours",
-    collection: "Concrete Candle Refills",
-  },
-  {
-    id: "r2",
-    slug: "refill-lavender",
-    name: "Lavender",
-    subtitle: "Provençal lavender — calm & clean",
-    type: "Concrete Candle Refill",
-    scentFamily: "Floral",
-    description: "Pure Provençal lavender — that clean, herbal clarity that clears the mind and slows the breath.",
-    story: "Distilled from lavender fields near Valensole during peak bloom in July. No synthetic fillers.",
-    sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-LAV-180" }],
-    image: "/products/refills/lavender.jpg",
-    hoverImage: "/products/refills/lavender.jpg",
-    isBestseller: false,
-    isNew: false,
-    burnTime: "40 hours",
-    collection: "Concrete Candle Refills",
-  },
-  {
-    id: "r3",
-    slug: "refill-jasmine",
-    name: "Jasmine",
-    subtitle: "White jasmine — rich & heady",
-    type: "Concrete Candle Refill",
-    scentFamily: "Floral",
-    description: "Jasmine in full bloom — heady, sensual, and undeniably alive. The queen of all floral refills.",
-    story: "Uses jasmine sambac absolute — the more intoxicating of the two jasmine species, prized in perfumery for its depth.",
-    sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-JAS-180" }],
-    image: "/products/refills/jasmine.jpg",
-    hoverImage: "/products/refills/jasmine.jpg",
-    isBestseller: false,
-    isNew: false,
-    burnTime: "40 hours",
-    collection: "Concrete Candle Refills",
-  },
-  {
-    id: "r4",
-    slug: "refill-passion-fruit",
-    name: "Passion Fruit",
-    subtitle: "Tropical & bright — joyful energy",
-    type: "Concrete Candle Refill",
-    scentFamily: "Citrus",
-    description: "Sunshine in wax — the sweet-tart burst of passion fruit balanced with tropical florals. Instantly uplifting.",
-    story: "Our most joyful refill, designed to bring warmth and colour to grey winter days.",
-    sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-PAS-180" }],
-    image: "/products/refills/passion-fruit.jpg",
-    hoverImage: "/products/refills/passion-fruit.jpg",
-    isBestseller: false,
-    isNew: true,
-    burnTime: "40 hours",
-    collection: "Concrete Candle Refills",
-  },
-  {
-    id: "r5",
-    slug: "refill-gardenia",
-    name: "Gardenia",
-    subtitle: "White gardenia — opulent & creamy",
-    type: "Concrete Candle Refill",
-    scentFamily: "Floral",
-    description: "The gardenia — heavy, creamy, impossibly lush. A single bloom fills a room. This refill fills a world.",
-    story: "Gardenia is the rarest flower in our collection to capture faithfully. This is the closest perfumery has come.",
-    sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-GAR-180" }],
-    image: "/products/refills/gardenia.jpg",
-    hoverImage: "/products/refills/gardenia.jpg",
-    isBestseller: true,
-    isNew: false,
-    burnTime: "40 hours",
-    collection: "Concrete Candle Refills",
-  },
-];
-
-
 // ─── COMBINED EXPORT ──────────────────────────────────────────────────────────
 
 export const products: Product[] = [
   ...diffusers,
   ...concretePotCandles,
-  ...concreteCandeRefills,
 ];
 
 export const getProductBySlug = (slug: string) =>
@@ -485,13 +393,5 @@ export const COLLECTIONS = [
     image: "/products/concrete-candles/mainpic2.png",
     href: "/shop?collection=Concrete Pot Candles",
     count: concretePotCandles.length,
-  },
-  {
-    id: "concrete-candle-refills",
-    label: "Concrete Candle Refills",
-    description: "5 pure scent refills for your concrete vessel",
-    image: "/products/refills/refills-main.jpg",
-    href: "/shop?collection=Concrete Candle Refills",
-    count: concreteCandeRefills.length,
   },
 ];

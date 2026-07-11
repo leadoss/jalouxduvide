@@ -32,6 +32,7 @@ function YoutubeIcon() {
 const FOOTER_LINKS = {
   Shop: [
     { label: "All Products", href: "/shop" },
+    { label: "Diffusers", href: "/shop?collection=Diffusers" },
     { label: "Concrete Candles", href: "/shop?collection=Concrete Pot Candles" },
     { label: "Diffusers", href: "/shop?collection=Diffusers" },
     { label: "Gift Sets", href: "/shop?collection=Gift Sets" },

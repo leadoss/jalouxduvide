@@ -14,7 +14,6 @@ const COLLECTIONS = [
   "All",
   "Diffusers",
   "Concrete Pot Candles",
-  "Concrete Candle Refills",
 ] as const;
 
 function ShopContent() {

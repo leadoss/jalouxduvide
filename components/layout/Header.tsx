@@ -11,7 +11,6 @@ const NAV_LINKS = [
   { label: "Shop All", href: "/shop" },
   { label: "Diffusers", href: "/shop?collection=Diffusers" },
   { label: "Concrete Candles", href: "/shop?collection=Concrete Pot Candles" },
-  { label: "Refills", href: "/shop?collection=Concrete Candle Refills" },
 ];
 
 export default function Header() {
