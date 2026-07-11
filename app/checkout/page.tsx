@@ -226,11 +226,11 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between text-[12px] font-300 text-[#8A8075]">
                 <span>Delivery</span>
-                <span>{sub >= 60 ? <span className="text-black font-400">Free</span> : "At delivery"}</span>
+                <span>{sub >= 60 ? <span className="text-black font-400">Free</span> : "$6.00"}</span>
               </div>
               <div className="flex justify-between text-[14px] font-500 text-black pt-3" style={{ borderTop: "1px solid #EEEAE6" }}>
                 <span>Total</span>
-                <span>${sub.toFixed(2)}</span>
+                <span>${(sub >= 60 ? sub : sub + 6).toFixed(2)}</span>
               </div>
             </div>
           </aside>
