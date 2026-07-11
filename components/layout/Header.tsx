@@ -8,6 +8,7 @@ import { useCartStore } from "@/lib/cart-store";
 import Logo from "@/components/ui/Logo";
 
 const NAV_LINKS = [
+  { label: "Home", href: "/" },
   { label: "Shop All", href: "/shop" },
   { label: "Diffusers", href: "/shop?collection=Diffusers" },
   { label: "Concrete Candles", href: "/shop?collection=Concrete Pot Candles" },
