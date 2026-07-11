@@ -11,7 +11,6 @@ import { useCartStore } from "@/lib/cart-store";
 import { Suspense } from "react";
 
 const COLLECTIONS = [
-  "All",
   "Diffusers",
   "Concrete Pot Candles",
 ] as const;
@@ -19,7 +18,7 @@ const COLLECTIONS = [
 function ShopContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const collection = searchParams.get("collection") ?? "All";
+  const collection = searchParams.get("collection") ?? "Diffusers";
 
   const [addedId, setAddedId] = useState<string | null>(null);
   const [selectedScents, setSelectedScents] = useState<Record<string, string>>({});
@@ -27,11 +26,7 @@ function ShopContent() {
   const addItem = useCartStore((s) => s.addItem);
 
   const handleCollectionChange = (c: string) => {
-    if (c === "All") {
-      router.push("/shop");
-    } else {
-      router.push(`/shop?collection=${encodeURIComponent(c)}`);
-    }
+    router.push(`/shop?collection=${encodeURIComponent(c)}`);
   };
 
   const handleScentSelect = (productId: string, scent: string, e: React.MouseEvent) => {
@@ -41,10 +36,7 @@ function ShopContent() {
   };
 
   const filtered = useMemo(
-    () =>
-      products.filter(
-        (p) => collection === "All" || p.collection === collection
-      ),
+    () => products.filter((p) => p.collection === collection),
     [collection]
   );
 
@@ -57,17 +49,17 @@ function ShopContent() {
     setTimeout(() => setAddedId(null), 1800);
   };
 
-  const pageTitle = collection === "All" ? "Our Collection" : collection;
+  const pageTitle = collection;
 
   return (
     <div className="min-h-screen bg-white">
 
-      {/* Hero */}
+      {/* Hero + filter */}
       <section
         className="pb-10 lg:pb-14 text-center border-b border-[#E8E4DF]"
         style={{ paddingTop: "104px" }}
       >
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-6 text-left">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-8 text-left">
           <Link
             href="/"
             className="inline-flex items-center gap-1.5 text-[13px] font-300 tracking-[0.1em] text-[#6B6B6B] hover:text-black transition-colors duration-200"
@@ -76,58 +68,33 @@ function ShopContent() {
             Home
           </Link>
         </div>
-        <h1 className="text-[22px] lg:text-[32px] font-300 tracking-[0.24em] uppercase text-black">
-          {pageTitle}
-        </h1>
+
+        {/* Category pill buttons — centered */}
+        <div className="flex justify-center gap-4 px-8">
+          {COLLECTIONS.map((c) => {
+            const active = collection === c;
+            return (
+              <button
+                key={c}
+                onClick={() => handleCollectionChange(c)}
+                className={`w-[160px] py-3 rounded-full text-[13px] font-400 tracking-[0.08em] border transition-all duration-200 ${
+                  active
+                    ? "bg-black text-white border-black"
+                    : "bg-white text-black border-black hover:bg-black hover:text-white"
+                }`}
+              >
+                {c}
+              </button>
+            );
+          })}
+        </div>
       </section>
 
       {/* Main */}
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 flex gap-16 lg:gap-20 py-16 lg:py-24">
-
-        {/* Sidebar */}
-        <aside className="hidden lg:block w-[200px] flex-shrink-0">
-          <p className="text-[11px] font-500 tracking-[0.18em] uppercase text-[#999] mb-4">Collections</p>
-          <nav className="flex flex-col gap-0.5">
-            {COLLECTIONS.map((c) => {
-              const active = collection === c;
-              return (
-                <button
-                  key={c}
-                  onClick={() => handleCollectionChange(c)}
-                  className={`text-left py-2 text-[14px] tracking-[0.04em] transition-colors duration-200 ${
-                    active
-                      ? "text-black font-500"
-                      : "text-[#6B6B6B] font-300 hover:text-black"
-                  }`}
-                >
-                  {c === "All" ? "All Products" : c}
-                </button>
-              );
-            })}
-          </nav>
-        </aside>
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-16 lg:py-24">
 
         {/* Grid */}
-        <div className="flex-1 min-w-0">
-          {/* Mobile collection filter tabs */}
-          <div className="lg:hidden flex gap-2 overflow-x-auto pb-6 mb-8 border-b border-[#E8E4DF] -mx-8 px-8" style={{ scrollbarWidth: "none" }}>
-            {COLLECTIONS.map((c) => {
-              const active = collection === c;
-              return (
-                <button
-                  key={c}
-                  onClick={() => handleCollectionChange(c)}
-                  className={`flex-shrink-0 px-4 py-2 text-[12px] font-400 tracking-[0.06em] border transition-all duration-200 ${
-                    active
-                      ? "border-black bg-black text-white"
-                      : "border-[#E8E4DF] text-[#6B6B6B] hover:border-black hover:text-black"
-                  }`}
-                >
-                  {c === "All" ? "All" : c}
-                </button>
-              );
-            })}
-          </div>
+        <div className="w-full">
 
           {filtered.length === 0 ? (
             <div className="py-32 text-center">
