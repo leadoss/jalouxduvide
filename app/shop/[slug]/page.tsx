@@ -162,7 +162,7 @@ export default function ProductPage({ params }: Props) {
               </Link>
 
               {/* Name + price */}
-              <div className="flex items-start justify-between gap-4" style={{ marginBottom: "20px" }}>
+              <div className="flex items-start justify-between gap-4" style={{ marginBottom: "12px" }}>
                 <h1 className="text-[34px] lg:text-[52px] font-300 leading-[1.15] tracking-[-0.01em] text-black">
                   {product.name}
                 </h1>
@@ -170,6 +170,11 @@ export default function ProductPage({ params }: Props) {
                   ${selectedSize.price}
                 </span>
               </div>
+
+              {/* Volume */}
+              <p className="text-[13px] font-300 text-[#9B9490] tracking-[0.06em] uppercase" style={{ marginBottom: "32px" }}>
+                {selectedSize.volume}
+              </p>
 
               {/* Description */}
               <p className="text-[17px] font-300 text-black leading-[1.9]" style={{ marginBottom: "52px" }}>
