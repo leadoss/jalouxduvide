@@ -31,6 +31,14 @@ export default function ProductPage({ params }: Props) {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [slug]);
 
+  useEffect(() => {
+    if (product.image === product.hoverImage) return;
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev === 0 ? 1 : 0));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [product.image, product.hoverImage]);
+
   const isConcretePotCandle = product.type === "Concrete Pot Candle";
   const SCENTS = product.scents ?? [];
 
