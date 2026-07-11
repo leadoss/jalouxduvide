@@ -48,24 +48,6 @@ export default function ProductPage({ params }: Props) {
     setAccordionOpen((prev) => (prev === key ? null : key));
 
   const ACCORDION_ITEMS = [
-    ...(product.scentNotes ? [{
-      key: "notes",
-      label: "Scent Notes",
-      content: (
-        <div className="space-y-4 pt-2 pb-6">
-          {(["top", "heart", "base"] as const).map((layer) => (
-            <div key={layer} className="flex gap-8">
-              <span className="text-[10px] font-500 tracking-[0.14em] uppercase text-[#B8B0A8] w-10 pt-0.5 flex-shrink-0">
-                {layer}
-              </span>
-              <p className="text-[13px] font-300 text-black leading-relaxed">
-                {product.scentNotes?.[layer].join(" · ")}
-              </p>
-            </div>
-          ))}
-        </div>
-      ),
-    }] : []),
     {
       key: "details",
       label: "Product Details",
