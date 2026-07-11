@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -98,7 +98,7 @@ export default function Header() {
         </header>
       </motion.div>
 
-      {/* Mobile drawer â€” slides from left */}
+      {/* Mobile drawer — slides from left */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -134,7 +134,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="text-xl font-300 text-black hover:text-[#9333EA] transition-colors duration-200"
+                      className="text-[18px] font-300 text-black hover:text-[#6B6B6B] transition-colors duration-200"
                     >
                       {link.label}
                     </Link>

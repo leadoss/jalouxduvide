@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { LogoMark } from "@/components/ui/Logo";
 // social icons
 
@@ -32,7 +32,7 @@ function YoutubeIcon() {
 const FOOTER_LINKS = {
   Shop: [
     { label: "All Products", href: "/shop" },
-    { label: "Candles", href: "/shop?collection=Candles" },
+    { label: "Concrete Candles", href: "/shop?collection=Concrete Pot Candles" },
     { label: "Diffusers", href: "/shop?collection=Diffusers" },
     { label: "Gift Sets", href: "/shop?collection=Gift Sets" },
   ],
@@ -124,7 +124,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8">
           <p className="text-[12px] font-300 text-cream/30">
-            Â© {new Date().getFullYear()} Jaloux Du Vide. All rights reserved.
+            © {new Date().getFullYear()} Jaloux Du Vide. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-[12px] font-300 text-cream/30 hover:text-cream/60 transition-colors duration-200">

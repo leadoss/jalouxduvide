@@ -1,4 +1,4 @@
-﻿export type ScentFamily =
+export type ScentFamily =
   | "Floral"
   | "Woody"
   | "Fresh"
@@ -46,14 +46,14 @@ export type Product = {
   collection: "Diffusers" | "Concrete Pot Candles" | "Concrete Candle Refills" | "Soy Wax Candles";
 };
 
-// â”€â”€â”€ DIFFUSERS (7) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── DIFFUSERS (7) ────────────────────────────────────────────────────────────
 
 const diffusers: Product[] = [
   {
     id: "d1",
     slug: "eden",
     name: "Eden",
-    subtitle: "Gardenia & Musk â€” captivating, lush & paradisiacal",
+    subtitle: "Gardenia & Musk — captivating, lush & paradisiacal",
     type: "Diffuser",
     scentFamily: "Floral",
     scentNotes: {
@@ -77,7 +77,7 @@ const diffusers: Product[] = [
     id: "d2",
     slug: "focus",
     name: "Focus",
-    subtitle: "Amber & Oud â€” centered, thoughtful & luxurious",
+    subtitle: "Amber & Oud — centered, thoughtful & luxurious",
     type: "Diffuser",
     scentFamily: "Oriental",
     scentNotes: {
@@ -100,7 +100,7 @@ const diffusers: Product[] = [
     id: "d3",
     slug: "cool",
     name: "Cool",
-    subtitle: "Ocean Memories â€” sea salt, marine & fresh lemon",
+    subtitle: "Ocean Memories — sea salt, marine & fresh lemon",
     type: "Diffuser",
     scentFamily: "Aquatic",
     scentNotes: {
@@ -123,7 +123,7 @@ const diffusers: Product[] = [
     id: "d4",
     slug: "calm",
     name: "Calm",
-    subtitle: "Jasmine & Musk â€” serene, soft & deeply relaxing",
+    subtitle: "Jasmine & Musk — serene, soft & deeply relaxing",
     type: "Diffuser",
     scentFamily: "Floral",
     scentNotes: {
@@ -146,7 +146,7 @@ const diffusers: Product[] = [
     id: "d5",
     slug: "warmth",
     name: "Warmth",
-    subtitle: "Vanilla & Caramel â€” indulgent & deeply comforting",
+    subtitle: "Vanilla & Caramel — indulgent & deeply comforting",
     type: "Diffuser",
     scentFamily: "Gourmand",
     scentNotes: {
@@ -169,7 +169,7 @@ const diffusers: Product[] = [
     id: "d6",
     slug: "grounded",
     name: "Grounded",
-    subtitle: "Oud & Honey â€” rich, earth-bound & deeply comforting",
+    subtitle: "Oud & Honey — rich, earth-bound & deeply comforting",
     type: "Diffuser",
     scentFamily: "Oriental",
     scentNotes: {
@@ -192,7 +192,7 @@ const diffusers: Product[] = [
     id: "d7",
     slug: "confident",
     name: "Confident",
-    subtitle: "Sharp & sophisticated â€” green apple, cinnamon & cardamom",
+    subtitle: "Sharp & sophisticated — green apple, cinnamon & cardamom",
     type: "Diffuser",
     scentFamily: "Fresh",
     scentNotes: {
@@ -213,14 +213,14 @@ const diffusers: Product[] = [
   },
 ];
 
-// â”€â”€â”€ CONCRETE POT CANDLES (8) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── CONCRETE POT CANDLES (8) ─────────────────────────────────────────────────
 
 const concretePotCandles: Product[] = [
   {
     id: "cp1",
     slug: "corail",
     name: "Corail",
-    subtitle: "Coral-texture sphere â€” sculptural & organic",
+    subtitle: "Coral-texture sphere — sculptural & organic",
     type: "Concrete Pot Candle",
     scentFamily: "Floral",
     scents: ["Peony", "White Tea", "Rose Absolute", "Soft Musk"],
@@ -237,12 +237,12 @@ const concretePotCandles: Product[] = [
   {
     id: "cp2",
     slug: "manege",
-    name: "ManÃ¨ge",
-    subtitle: "Ornate relief vessel â€” Parisian carousel elegance",
+    name: "Manège",
+    subtitle: "Ornate relief vessel — Parisian carousel elegance",
     type: "Concrete Pot Candle",
     scentFamily: "Floral",
     scents: ["Neroli", "White Rose", "Jasmine", "White Musk", "Sandalwood"],
-    description: "A white vessel engraved with carousel horses and baroque flourishes, resting on its own ornate display plate. ManÃ¨ge is the crown jewel of the collection â€” a piece that belongs as much on a vanity as it does in a museum.",
+    description: "A white vessel engraved with carousel horses and baroque flourishes, resting on its own ornate display plate. Manège is the crown jewel of the collection — a piece that belongs as much on a vanity as it does in a museum.",
     story: "Each vessel is individually cast and hand-finished in white, its relief details a nod to the gilded carousels of nineteenth-century Paris.",
     sizes: [{ label: "Standard", volume: "200g", price: 13, sku: "CP-MAN-200" }],
     image: "/products/concrete-candles/manege.png",
@@ -255,13 +255,13 @@ const concretePotCandles: Product[] = [
   {
     id: "cp3",
     slug: "ecorce",
-    name: "Ã‰corce",
-    subtitle: "Bark-textured vessel â€” raw & organic",
+    name: "Écorce",
+    subtitle: "Bark-textured vessel — raw & organic",
     type: "Concrete Pot Candle",
     scentFamily: "Woody",
     scents: ["Bergamot", "Cedarwood", "Vetiver", "Oakmoss", "Dark Amber"],
-    description: "A white vessel whose surface is carved with deep wood-grain lines that make it feel like a section of ancient timber. Available in white only, Ã‰corce brings the quiet dignity of the forest indoors.",
-    story: "The bark texture is pressed by hand into each mould before setting â€” no two vessels share exactly the same grain pattern.",
+    description: "A white vessel whose surface is carved with deep wood-grain lines that make it feel like a section of ancient timber. Available in white only, Écorce brings the quiet dignity of the forest indoors.",
+    story: "The bark texture is pressed by hand into each mould before setting — no two vessels share exactly the same grain pattern.",
     sizes: [{ label: "Standard", volume: "200g", price: 10, sku: "CP-ECO-200" }],
     image: "/products/concrete-candles/ecorce.png",
     hoverImage: "/products/concrete-candles/ecorce.png",
@@ -274,12 +274,12 @@ const concretePotCandles: Product[] = [
     id: "cp4",
     slug: "tarte",
     name: "Tarte",
-    subtitle: "Ruffled edge bowl â€” French pÃ¢tisserie chic",
+    subtitle: "Ruffled edge bowl — French pâtisserie chic",
     type: "Concrete Pot Candle",
     scentFamily: "Gourmand",
     scents: ["Caramel", "Vanilla", "Tonka Bean", "Warm Sandalwood"],
-    description: "Shallow and wide, rimmed with pleated ruffled edges like a classic French tart mould â€” finished in white. An effortlessly chic piece that doubles as a decorative dish between burns.",
-    story: "Named for the tarte aux fruits mould found in every Parisian pÃ¢tisserie. Simple in form, striking in white.",
+    description: "Shallow and wide, rimmed with pleated ruffled edges like a classic French tart mould — finished in white. An effortlessly chic piece that doubles as a decorative dish between burns.",
+    story: "Named for the tarte aux fruits mould found in every Parisian pâtisserie. Simple in form, striking in white.",
     sizes: [{ label: "Standard", volume: "200g", price: 10, sku: "CP-TAR-200" }],
     image: "/products/concrete-candles/tarte.png",
     hoverImage: "/products/concrete-candles/tarte.png",
@@ -292,11 +292,11 @@ const concretePotCandles: Product[] = [
     id: "cp5",
     slug: "brut",
     name: "Brut",
-    subtitle: "Raw vessel with wooden wick â€” brutalist minimal",
+    subtitle: "Raw vessel with wooden wick — brutalist minimal",
     type: "Concrete Pot Candle",
     scentFamily: "Woody",
     scents: ["Black Pepper", "Cedarwood", "Smoked Birch", "Dark Amber", "Musk"],
-    description: "A rough-hewn white cylinder with a crackling wooden wick and a matching lidded top. Brut makes no apology for its rawness â€” honest, architectural, and made to last.",
+    description: "A rough-hewn white cylinder with a crackling wooden wick and a matching lidded top. Brut makes no apology for its rawness — honest, architectural, and made to last.",
     story: "Hand-cast in a single pour and left unsmoothed. Every scratch and pit on the white surface is part of the design.",
     sizes: [{ label: "Standard", volume: "200g", price: 10, sku: "CP-BRU-200" }],
     image: "/products/concrete-candles/brut.png",
@@ -310,12 +310,12 @@ const concretePotCandles: Product[] = [
     id: "cp6",
     slug: "rosette",
     name: "Rosette",
-    subtitle: "Baroque goblet with lid â€” romantic & ornate",
+    subtitle: "Baroque goblet with lid — romantic & ornate",
     type: "Concrete Pot Candle",
     scentFamily: "Floral",
     scents: ["Raspberry", "Lychee", "Damask Rose", "Peony", "Cashmere"],
-    description: "A white goblet vessel adorned with floral and baroque relief, crowned with a sculptural lidded top. Finished in white, Rosette is the most romantic piece in the collection â€” feminine, opulent, and completely unforgettable.",
-    story: "The baroque detailing was inspired by antique French porcelain found in a ProvenÃ§al market, reinterpreted here in pure white.",
+    description: "A white goblet vessel adorned with floral and baroque relief, crowned with a sculptural lidded top. Finished in white, Rosette is the most romantic piece in the collection — feminine, opulent, and completely unforgettable.",
+    story: "The baroque detailing was inspired by antique French porcelain found in a Provençal market, reinterpreted here in pure white.",
     sizes: [{ label: "Standard", volume: "200g", price: 13, sku: "CP-ROS-200" }],
     image: "/products/concrete-candles/rosette.png",
     hoverImage: "/products/concrete-candles/rosette.png",
@@ -327,13 +327,13 @@ const concretePotCandles: Product[] = [
   {
     id: "cp7",
     slug: "dome",
-    name: "DÃ´me",
-    subtitle: "Smooth sphere on wood â€” pure minimalism",
+    name: "Dôme",
+    subtitle: "Smooth sphere on wood — pure minimalism",
     type: "Concrete Pot Candle",
     scentFamily: "Fresh",
     scents: ["White Tea", "Neroli", "Jasmine", "Lily", "Sandalwood"],
-    description: "A perfectly smooth, egg-shaped white vessel resting on a natural wood disc. DÃ´me is the quietest object in the room â€” and somehow the one everyone notices first.",
-    story: "Conceived as an object of pure presence. No texture, no ornament â€” just a clean white form and the light it catches.",
+    description: "A perfectly smooth, egg-shaped white vessel resting on a natural wood disc. Dôme is the quietest object in the room — and somehow the one everyone notices first.",
+    story: "Conceived as an object of pure presence. No texture, no ornament — just a clean white form and the light it catches.",
     sizes: [{ label: "Standard", volume: "200g", price: 10, sku: "CP-DOM-200" }],
     image: "/products/concrete-candles/dome.png",
     hoverImage: "/products/concrete-candles/dome.png",
@@ -346,11 +346,11 @@ const concretePotCandles: Product[] = [
     id: "cp8",
     slug: "larme",
     name: "Larme",
-    subtitle: "Teardrop vessel â€” soft & grounded",
+    subtitle: "Teardrop vessel — soft & grounded",
     type: "Concrete Pot Candle",
     scentFamily: "Earthy",
     scents: ["Cardamom", "Pink Pepper", "Patchouli", "Vetiver", "Tonka"],
-    description: "A white teardrop vessel, slightly tapered at the top and grounded at the base. Simple in silhouette, striking in white â€” Larme is the piece that anchors the room without demanding attention.",
+    description: "A white teardrop vessel, slightly tapered at the top and grounded at the base. Simple in silhouette, striking in white — Larme is the piece that anchors the room without demanding attention.",
     story: "The teardrop form references ancient water vessels made to be held, not just displayed. Finished in white for a timeless, clean presence.",
     sizes: [{ label: "Standard", volume: "200g", price: 10, sku: "CP-LAR-200" }],
     image: "/products/concrete-candles/larme.png",
@@ -362,7 +362,7 @@ const concretePotCandles: Product[] = [
   },
 ];
 
-// â”€â”€â”€ CONCRETE CANDLE REFILLS (5) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── CONCRETE CANDLE REFILLS (5) ──────────────────────────────────────────────
 
 const concreteCandeRefills: Product[] = [
   {
@@ -372,7 +372,7 @@ const concreteCandeRefills: Product[] = [
     subtitle: "Rich & creamy vanilla refill",
     type: "Concrete Candle Refill",
     scentFamily: "Gourmand",
-    description: "Pure, unapologetic vanilla â€” rich, creamy, and endlessly comforting. The most-loved refill in the collection.",
+    description: "Pure, unapologetic vanilla — rich, creamy, and endlessly comforting. The most-loved refill in the collection.",
     story: "Sourced from Madagascar vanilla absolute, blended into a clean coconut-soy wax for a slow, even burn.",
     sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-VAN-180" }],
     image: "/products/refills/vanille.jpg",
@@ -386,10 +386,10 @@ const concreteCandeRefills: Product[] = [
     id: "r2",
     slug: "refill-lavender",
     name: "Lavender",
-    subtitle: "ProvenÃ§al lavender â€” calm & clean",
+    subtitle: "Provençal lavender — calm & clean",
     type: "Concrete Candle Refill",
     scentFamily: "Floral",
-    description: "Pure ProvenÃ§al lavender â€” that clean, herbal clarity that clears the mind and slows the breath.",
+    description: "Pure Provençal lavender — that clean, herbal clarity that clears the mind and slows the breath.",
     story: "Distilled from lavender fields near Valensole during peak bloom in July. No synthetic fillers.",
     sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-LAV-180" }],
     image: "/products/refills/lavender.jpg",
@@ -403,11 +403,11 @@ const concreteCandeRefills: Product[] = [
     id: "r3",
     slug: "refill-jasmine",
     name: "Jasmine",
-    subtitle: "White jasmine â€” rich & heady",
+    subtitle: "White jasmine — rich & heady",
     type: "Concrete Candle Refill",
     scentFamily: "Floral",
-    description: "Jasmine in full bloom â€” heady, sensual, and undeniably alive. The queen of all floral refills.",
-    story: "Uses jasmine sambac absolute â€” the more intoxicating of the two jasmine species, prized in perfumery for its depth.",
+    description: "Jasmine in full bloom — heady, sensual, and undeniably alive. The queen of all floral refills.",
+    story: "Uses jasmine sambac absolute — the more intoxicating of the two jasmine species, prized in perfumery for its depth.",
     sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-JAS-180" }],
     image: "/products/refills/jasmine.jpg",
     hoverImage: "/products/refills/jasmine.jpg",
@@ -420,10 +420,10 @@ const concreteCandeRefills: Product[] = [
     id: "r4",
     slug: "refill-passion-fruit",
     name: "Passion Fruit",
-    subtitle: "Tropical & bright â€” joyful energy",
+    subtitle: "Tropical & bright — joyful energy",
     type: "Concrete Candle Refill",
     scentFamily: "Citrus",
-    description: "Sunshine in wax â€” the sweet-tart burst of passion fruit balanced with tropical florals. Instantly uplifting.",
+    description: "Sunshine in wax — the sweet-tart burst of passion fruit balanced with tropical florals. Instantly uplifting.",
     story: "Our most joyful refill, designed to bring warmth and colour to grey winter days.",
     sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-PAS-180" }],
     image: "/products/refills/passion-fruit.jpg",
@@ -437,10 +437,10 @@ const concreteCandeRefills: Product[] = [
     id: "r5",
     slug: "refill-gardenia",
     name: "Gardenia",
-    subtitle: "White gardenia â€” opulent & creamy",
+    subtitle: "White gardenia — opulent & creamy",
     type: "Concrete Candle Refill",
     scentFamily: "Floral",
-    description: "The gardenia â€” heavy, creamy, impossibly lush. A single bloom fills a room. This refill fills a world.",
+    description: "The gardenia — heavy, creamy, impossibly lush. A single bloom fills a room. This refill fills a world.",
     story: "Gardenia is the rarest flower in our collection to capture faithfully. This is the closest perfumery has come.",
     sizes: [{ label: "Refill", volume: "180g", price: 3, sku: "REF-GAR-180" }],
     image: "/products/refills/gardenia.jpg",
@@ -453,7 +453,7 @@ const concreteCandeRefills: Product[] = [
 ];
 
 
-// â”€â”€â”€ COMBINED EXPORT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── COMBINED EXPORT ──────────────────────────────────────────────────────────
 
 export const products: Product[] = [
   ...diffusers,

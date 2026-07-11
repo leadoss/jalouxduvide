@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -52,18 +52,18 @@ export default function BrandStory() {
                 <br />
                 <span className="italic font-600">labour of love.</span>
               </h2>
-              <p className="text-cream/60 font-300 text-lg leading-relaxed mb-8">
+              <p className="text-cream/60 font-300 text-[16px] leading-relaxed mb-8">
                 We believe true luxury isn't loud. It's the quiet ritual of
                 lighting a candle at the end of a long day, the diffuser
                 humming softly in the corner, filling your space with warmth.
               </p>
-              <p className="text-cream/60 font-300 leading-relaxed mb-8">
-                Every piece we craft is made with intention â€” the finest
+              <p className="text-cream/60 font-300 text-[15px] leading-relaxed mb-8">
+                Every piece we craft is made with intention — the finest
                 ingredients, poured by hand. We don't just create fragrances;
                 we create feelings. The comfort of coming home. The calm before
                 sleep. The joy of a space that finally feels like you.
               </p>
-              <p className="text-cream/50 font-300 leading-relaxed mb-16 italic">
+              <p className="text-cream/50 font-300 text-[15px] leading-relaxed mb-16 italic">
                 Your home deserves more than just a scent. It deserves a soul.
               </p>
             </FadeIn>
@@ -73,8 +73,8 @@ export default function BrandStory() {
               <div className="grid grid-cols-3 gap-4 mt-14 pt-14 border-t border-cream/10">
                 {STATS.map((stat) => (
                   <div key={stat.label}>
-                    <p className="text-3xl font-600 text-cream mb-1">{stat.value}</p>
-                    <p className="text-lg font-300 text-cream/40 leading-snug">{stat.label}</p>
+                    <p className="text-[28px] font-500 text-cream mb-1">{stat.value}</p>
+                    <p className="text-[13px] font-300 text-cream/40 leading-snug">{stat.label}</p>
                   </div>
                 ))}
               </div>

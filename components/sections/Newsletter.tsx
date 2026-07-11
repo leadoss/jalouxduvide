@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,7 +26,7 @@ export default function Newsletter() {
               Stay in the loop
             </h2>
             <p className="text-cream/50 font-300 leading-relaxed mb-10">
-              New arrivals, exclusive offers, and quiet notes from our studio â€” delivered to your inbox.
+              New arrivals, exclusive offers, and quiet notes from our studio — delivered to your inbox.
             </p>
           </FadeIn>
 

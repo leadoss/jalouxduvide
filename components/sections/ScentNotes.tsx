@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -25,7 +25,7 @@ const NOTES: Note[] = [
   {
     id: "neroli",
     layer: "Top",
-    name: "NÃ©roli",
+    name: "Néroli",
     origin: "Morocco",
     description: "Distilled from the blossom of the bitter orange tree. Delicate, slightly honeyed, and impossibly elegant.",
     color: "#C8A882",

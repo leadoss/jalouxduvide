@@ -110,9 +110,29 @@ function ShopContent() {
 
         {/* Grid */}
         <div className="flex-1 min-w-0">
+          {/* Mobile collection filter tabs */}
+          <div className="lg:hidden flex gap-2 overflow-x-auto pb-6 mb-8 border-b border-[#E8E4DF] -mx-8 px-8" style={{ scrollbarWidth: "none" }}>
+            {COLLECTIONS.map((c) => {
+              const active = collection === c;
+              return (
+                <button
+                  key={c}
+                  onClick={() => handleCollectionChange(c)}
+                  className={`flex-shrink-0 px-4 py-2 text-[12px] font-400 tracking-[0.06em] border transition-all duration-200 ${
+                    active
+                      ? "border-black bg-black text-white"
+                      : "border-[#E8E4DF] text-[#6B6B6B] hover:border-black hover:text-black"
+                  }`}
+                >
+                  {c === "All" ? "All" : c}
+                </button>
+              );
+            })}
+          </div>
+
           {filtered.length === 0 ? (
             <div className="py-32 text-center">
-              <p className="text-[18px] font-300 tracking-[0.1em] uppercase text-[#C084FC] mb-8">
+              <p className="text-[15px] font-300 tracking-[0.1em] uppercase text-[#6B6B6B] mb-8">
                 No products found
               </p>
               <button

@@ -21,9 +21,9 @@ export default function FeaturedCollections() {
           <FadeIn delay={0.1} direction="left">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 text-lg font-500 tracking-[0.12em] uppercase text-navy underline-reveal"
+              className="inline-flex items-center gap-2 text-[13px] font-400 tracking-[0.14em] uppercase text-black border-b border-black pb-0.5 hover:opacity-60 transition-opacity duration-200"
             >
-              View All <ArrowRight size={14} strokeWidth={1.5} />
+              View All <ArrowRight size={12} strokeWidth={1.5} />
             </Link>
           </FadeIn>
         </div>
@@ -48,8 +48,8 @@ export default function FeaturedCollections() {
                   {/* Bottom badge */}
                   <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
                     <div>
-                      <p className="text-cream text-xl font-500">{col.label}</p>
-                      <p className="text-cream/60 text-lg font-300 mt-1">
+                      <p className="text-cream text-[17px] font-500">{col.label}</p>
+                      <p className="text-cream/60 text-[14px] font-300 mt-1">
                         {col.count} products
                       </p>
                     </div>

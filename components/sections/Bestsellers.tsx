@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import Link from "next/link";
@@ -27,9 +27,9 @@ export default function Bestsellers() {
           <FadeIn delay={0.1} direction="left">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 text-lg font-500 tracking-[0.12em] uppercase text-navy underline-reveal"
+              className="inline-flex items-center gap-2 text-[13px] font-400 tracking-[0.14em] uppercase text-black border-b border-black pb-0.5 hover:opacity-60 transition-opacity duration-200"
             >
-              All Products <ArrowRight size={14} strokeWidth={1.5} />
+              All Products <ArrowRight size={12} strokeWidth={1.5} />
             </Link>
           </FadeIn>
         </div>
@@ -63,7 +63,7 @@ export default function Bestsellers() {
                     {/* Hover image */}
                     <Image
                       src={product.hoverImage}
-                      alt={`${product.name} â€” alternate view`}
+                      alt={`${product.name} — alternate view`}
                       fill
                       className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       sizes="320px"
