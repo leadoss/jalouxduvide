@@ -71,7 +71,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/jalouxduvide?igsh=MXpjbTJoODR3cTln"
                 aria-label="Instagram"
                 className="text-cream/40 hover:text-cream transition-colors duration-200"
                 target="_blank"
