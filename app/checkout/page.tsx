@@ -224,7 +224,7 @@ export default function CheckoutPage() {
             <motion.button
               type="submit"
               whileTap={{ scale: 0.99 }}
-              className="w-full h-[54px] bg-black text-white text-[12px] font-500 tracking-[0.22em] uppercase hover:bg-[#1A1A1A] transition-colors duration-300"
+              className="block mx-auto px-16 h-[52px] rounded-full bg-black text-white text-[12px] font-500 tracking-[0.22em] uppercase hover:bg-[#1A1A1A] transition-colors duration-300"
             >
               Place Order
             </motion.button>
