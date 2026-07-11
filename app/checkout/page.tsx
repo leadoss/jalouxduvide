@@ -36,6 +36,7 @@ export default function CheckoutPage() {
   const [fields, setFields] = useState<Field>(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<keyof Field, string>>>({});
   const [placed, setPlaced] = useState(false);
+  const [orderTotal, setOrderTotal] = useState(0);
 
   if (items.length === 0 && !placed) {
     return (
@@ -70,6 +71,8 @@ export default function CheckoutPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+    const total = sub >= 60 ? sub : sub + 6;
+    setOrderTotal(total);
     clearCart();
     setPlaced(true);
   };
@@ -87,11 +90,24 @@ export default function CheckoutPage() {
         </motion.div>
         <div>
           <h1 className="text-[26px] font-300 text-black mb-3">Order Confirmed</h1>
-          <p className="text-[14px] font-300 text-[#8A8075] leading-relaxed max-w-[300px] mx-auto">
-            {fields.payment === "whish"
-              ? "We'll send you a Whish payment request shortly. Thank you!"
-              : "Your order has been received. We'll contact you to confirm delivery. Thank you!"}
-          </p>
+          {fields.payment === "whish" ? (
+            <div className="mt-2 bg-[#F5F3F1] px-8 py-6 text-center max-w-[340px] mx-auto">
+              <p className="text-[12px] font-500 tracking-[0.18em] uppercase text-[#8A8075] mb-4">
+                Complete your payment via Whish
+              </p>
+              <p className="text-[13px] font-300 text-[#8A8075] mb-2">Send</p>
+              <p className="text-[34px] font-300 text-black mb-2">${orderTotal.toFixed(2)}</p>
+              <p className="text-[13px] font-300 text-[#8A8075] mb-1">to Whish number</p>
+              <p className="text-[26px] font-500 text-black tracking-[0.06em]">03 240 664</p>
+              <p className="text-[11px] font-300 text-[#B0A8A0] mt-4 leading-relaxed">
+                Your order will be confirmed once payment is received.
+              </p>
+            </div>
+          ) : (
+            <p className="text-[14px] font-300 text-[#8A8075] leading-relaxed max-w-[300px] mx-auto">
+              Your order has been received. We'll contact you to confirm delivery. Thank you!
+            </p>
+          )}
         </div>
         <Link href="/shop" className="mt-2 text-[12px] font-400 tracking-[0.16em] uppercase border-b border-black pb-0.5 hover:opacity-60 transition-opacity">
           Continue Shopping
