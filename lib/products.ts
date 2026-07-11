@@ -65,7 +65,7 @@ const diffusers: Product[] = [
       "Captivating, lush, and paradisiacal. Eden transports you to a sun-drenched sanctuary, pairing the creamy, opulent sweetness of fully bloomed gardenias with a soft, enduring undertone of white musk.",
     story:
       "The vibrant purple elixir is presented in an ornate glass bottle adorned with a white bow, set against a breathtaking stone fountain landscape that overflows with fresh gardenias, delicate violets, and golden warmth under a soft morning glow.",
-    sizes: [{ label: "Standard", volume: "125mL", price: 10, sku: "DIF-EDEN-125" }],
+    sizes: [{ label: "Standard", volume: "125mL", price: 20, sku: "DIF-EDEN-125" }],
     image: "/products/diffusers/eden.jpg",
     hoverImage: "/products/diffusers/eden.jpg",
     isBestseller: true,
