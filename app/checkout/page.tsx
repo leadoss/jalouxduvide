@@ -73,30 +73,26 @@ export default function CheckoutPage() {
     if (!validate()) return;
     const total = sub >= 60 ? sub : sub + 6;
 
-    // Send order to Google Sheets
-    try {
-      await fetch("/api/order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          date: new Date().toLocaleString("en-GB"),
-          firstName: fields.firstName,
-          lastName: fields.lastName,
-          phone: fields.phone,
-          email: fields.email,
-          city: fields.city,
-          street: fields.street,
-          building: fields.building,
-          payment: fields.payment === "whish" ? "Whish" : "Cash on Delivery",
-          items: items.map((i) => `${i.product.name} x${i.quantity}`).join(", "),
-          subtotal: `$${sub.toFixed(2)}`,
-          delivery: sub >= 60 ? "Free" : "$6.00",
-          total: `$${total.toFixed(2)}`,
-        }),
-      });
-    } catch {
-      // Don't block the user if sheet fails
-    }
+    // Send order to Google Sheets (fire and forget — don't block confirmation)
+    fetch("/api/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        date: new Date().toLocaleString("en-GB"),
+        firstName: fields.firstName,
+        lastName: fields.lastName,
+        phone: fields.phone,
+        email: fields.email,
+        city: fields.city,
+        street: fields.street,
+        building: fields.building,
+        payment: fields.payment === "whish" ? "Whish" : "Cash on Delivery",
+        items: items.map((i) => `${i.product.name} x${i.quantity}`).join(", "),
+        subtotal: `$${sub.toFixed(2)}`,
+        delivery: sub >= 60 ? "Free" : "$6.00",
+        total: `$${total.toFixed(2)}`,
+      }),
+    }).catch(() => {});
 
     setOrderTotal(total);
     clearCart();
