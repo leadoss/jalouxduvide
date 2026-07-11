@@ -73,10 +73,10 @@ export default function CheckoutPage() {
     if (!validate()) return;
     const total = sub >= 60 ? sub : sub + 6;
 
-    // Send order to Google Sheets (fire and forget — don't block confirmation)
-    fetch("/api/order", {
+    // Send order directly to Google Apps Script (works on any deployment)
+    fetch("https://script.google.com/macros/s/AKfycbzafAck_vV7-2YpF6Snh-k4cJHZsOR1E4hgTDJACfzJ8ZxBpApJUPwb9E93NqVfVLZj/exec", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      mode: "no-cors",
       body: JSON.stringify({
         date: new Date().toLocaleString("en-GB"),
         firstName: fields.firstName,
