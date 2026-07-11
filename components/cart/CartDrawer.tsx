@@ -186,7 +186,7 @@ export default function CartDrawer() {
                 <Link
                   href="/checkout"
                   onClick={closeCart}
-                  className="block mx-auto w-fit px-12 text-center bg-black text-white text-[14px] font-500 tracking-[0.06em] uppercase py-4 rounded-full hover:bg-gray-900 transition-colors duration-200"
+                  className="block mx-auto w-fit px-16 text-center bg-black text-white text-[15px] font-500 tracking-[0.06em] uppercase py-5 rounded-full hover:bg-gray-900 transition-colors duration-200"
                 >
                   Check out
                 </Link>
