@@ -191,10 +191,10 @@ export default function ProductPage({ params }: Props) {
                       <button
                         key={scent}
                         onClick={() => setSelectedScent(scent)}
-                        className={`px-5 py-3 border text-[14px] font-400 tracking-[0.08em] transition-all duration-200 ${
+                        className={`px-6 py-3.5 rounded-full border text-[14px] font-400 tracking-[0.06em] transition-all duration-200 ${
                           selectedScent === scent
                             ? "border-black bg-black text-white"
-                            : "border-[#E8E4DF] text-black hover:border-black"
+                            : "border-black bg-white text-black hover:bg-black hover:text-white"
                         }`}
                       >
                         {scent}
