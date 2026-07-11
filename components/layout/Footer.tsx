@@ -60,11 +60,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
               <LogoMark size={42} className="text-cream" />
-              <span className="text-lg font-500 tracking-[0.22em] uppercase text-cream">
+              <span className="text-[13px] font-500 tracking-[0.22em] uppercase text-cream">
                 Jaloux Du Vide
               </span>
             </Link>
-            <p className="text-lg font-300 text-cream/50 leading-relaxed max-w-xs mb-8">
+            <p className="text-[13px] font-300 text-cream/50 leading-relaxed max-w-xs mb-8">
               Scent as a form of art. Hand-poured in small batches, crafted
               from the world's finest natural ingredients.
             </p>
@@ -102,7 +102,7 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
             <div key={heading}>
-              <h3 className="text-lg font-500 tracking-[0.14em] uppercase text-cream/30 mb-5">
+              <h3 className="text-[11px] font-500 tracking-[0.14em] uppercase text-cream/40 mb-5">
                 {heading}
               </h3>
               <ul className="flex flex-col gap-3">
@@ -110,7 +110,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-lg font-300 text-cream/60 hover:text-cream transition-colors duration-200 underline-reveal"
+                      className="text-[13px] font-300 text-cream/60 hover:text-cream transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -123,14 +123,14 @@ export default function Footer() {
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8">
-          <p className="text-lg font-300 text-cream/30">
+          <p className="text-[12px] font-300 text-cream/30">
             Â© {new Date().getFullYear()} Jaloux Du Vide. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-lg font-300 text-cream/30 hover:text-cream/60 transition-colors duration-200">
+            <Link href="/privacy" className="text-[12px] font-300 text-cream/30 hover:text-cream/60 transition-colors duration-200">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-lg font-300 text-cream/30 hover:text-cream/60 transition-colors duration-200">
+            <Link href="/terms" className="text-[12px] font-300 text-cream/30 hover:text-cream/60 transition-colors duration-200">
               Terms of Service
             </Link>
           </div>

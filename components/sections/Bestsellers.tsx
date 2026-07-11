@@ -72,12 +72,12 @@ export default function Bestsellers() {
                     {/* Badges */}
                     <div className="absolute top-4 left-4 flex gap-2">
                       {product.isBestseller && (
-                        <span className="bg-cream text-black text-[16px] font-500 tracking-[0.1em] uppercase px-3 py-1 rounded-full">
+                        <span className="bg-white text-black text-[10px] font-500 tracking-[0.08em] uppercase px-2.5 py-1 rounded-full">
                           Bestseller
                         </span>
                       )}
                       {product.isNew && (
-                        <span className="bg-navy text-cream text-[16px] font-500 tracking-[0.1em] uppercase px-3 py-1 rounded-full">
+                        <span className="bg-black text-white text-[10px] font-500 tracking-[0.08em] uppercase px-2.5 py-1 rounded-full">
                           New
                         </span>
                       )}
@@ -97,14 +97,14 @@ export default function Bestsellers() {
                 </Link>
 
                 {/* Text */}
-                <div className="flex items-start justify-between mt-5">
+                <div className="flex items-start justify-between mt-4">
                   <Link
                     href={`/shop/${product.slug}`}
-                    className="block text-lg font-500 text-black hover:text-navy transition-colors duration-200"
+                    className="block text-[14px] font-400 text-black hover:text-[#555] transition-colors duration-200 leading-snug"
                   >
                     {product.name}
                   </Link>
-                  <p className="text-lg font-500 text-black ml-4 flex-shrink-0">
+                  <p className="text-[14px] font-400 text-black ml-4 flex-shrink-0">
                     ${product.sizes[0].price}
                   </p>
                 </div>

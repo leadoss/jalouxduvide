@@ -66,23 +66,19 @@ function ShopContent() {
 
       {/* Hero */}
       <section
-        className="pb-12 lg:pb-16 text-center"
-        style={{
-          paddingTop: "104px",
-          background:
-            "radial-gradient(ellipse at 30% 0%, #F2D8D2 0%, #FAF0ED 35%, #FEFCFB 65%, #FFFFFF 90%)",
-        }}
+        className="pb-10 lg:pb-14 text-center border-b border-[#E8E4DF]"
+        style={{ paddingTop: "104px" }}
       >
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-8 text-left">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16 mb-6 text-left">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[18px] font-300 tracking-[0.12em] uppercase text-[#C084FC] hover:text-black transition-colors duration-200"
+            className="inline-flex items-center gap-1.5 text-[13px] font-300 tracking-[0.1em] text-[#6B6B6B] hover:text-black transition-colors duration-200"
           >
-            <ArrowLeft size={11} strokeWidth={1.5} />
+            <ArrowLeft size={10} strokeWidth={1.5} />
             Home
           </Link>
         </div>
-        <h1 className="text-[26px] lg:text-[40px] font-300 tracking-[0.28em] uppercase text-black">
+        <h1 className="text-[22px] lg:text-[32px] font-300 tracking-[0.24em] uppercase text-black">
           {pageTitle}
         </h1>
       </section>
@@ -91,18 +87,19 @@ function ShopContent() {
       <div className="max-w-7xl mx-auto px-8 lg:px-16 flex gap-16 lg:gap-20 py-16 lg:py-24">
 
         {/* Sidebar */}
-        <aside className="hidden lg:block w-[180px] flex-shrink-0">
-          <nav className="flex flex-col gap-1">
+        <aside className="hidden lg:block w-[200px] flex-shrink-0">
+          <p className="text-[11px] font-500 tracking-[0.18em] uppercase text-[#999] mb-4">Collections</p>
+          <nav className="flex flex-col gap-0.5">
             {COLLECTIONS.map((c) => {
               const active = collection === c;
               return (
                 <button
                   key={c}
                   onClick={() => handleCollectionChange(c)}
-                  className={`text-left py-2 text-[18px] tracking-[0.1em] uppercase transition-colors duration-200 ${
+                  className={`text-left py-2 text-[14px] tracking-[0.04em] transition-colors duration-200 ${
                     active
-                      ? "text-black font-400"
-                      : "text-[#C084FC] font-300 hover:text-black"
+                      ? "text-black font-500"
+                      : "text-[#6B6B6B] font-300 hover:text-black"
                   }`}
                 >
                   {c === "All" ? "All Products" : c}
@@ -161,12 +158,12 @@ function ShopContent() {
                         {(product.isBestseller || product.isNew) && (
                           <div className="absolute top-4 left-4 flex gap-2">
                             {product.isBestseller && (
-                              <span className="bg-white text-black text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1 rounded-full">
+                              <span className="bg-white text-black text-[10px] font-500 tracking-[0.08em] uppercase px-2.5 py-1 rounded-full">
                                 Bestseller
                               </span>
                             )}
                             {product.isNew && (
-                              <span className="bg-black text-white text-[18px] font-500 tracking-[0.1em] uppercase px-2.5 py-1 rounded-full">
+                              <span className="bg-black text-white text-[10px] font-500 tracking-[0.08em] uppercase px-2.5 py-1 rounded-full">
                                 New
                               </span>
                             )}
@@ -182,7 +179,7 @@ function ShopContent() {
                                   <button
                                     key={scent}
                                     onClick={(e) => handleScentSelect(product.id, scent, e)}
-                                    className={`px-2 py-1 border text-[18px] font-400 tracking-[0.06em] transition-all duration-150 ${
+                                    className={`px-2 py-1 border text-[11px] font-400 tracking-[0.06em] transition-all duration-150 ${
                                       selectedScents[product.id] === scent
                                         ? "border-black bg-black text-white"
                                         : "border-[#E8E4DF] text-black hover:border-black"
@@ -195,22 +192,22 @@ function ShopContent() {
                               <button
                                 onClick={(e) => handleAddToBag(product, e)}
                                 disabled={!selectedScents[product.id]}
-                                className={`w-full py-2 text-[16px] font-500 tracking-[0.22em] uppercase transition-all duration-200 ${
+                                className={`w-full py-2.5 text-[12px] font-500 tracking-[0.18em] uppercase transition-all duration-200 ${
                                   selectedScents[product.id]
                                     ? "bg-black text-white"
-                                    : "bg-[#E8E4DF] text-[#C084FC] cursor-not-allowed"
+                                    : "bg-[#E8E4DF] text-[#999] cursor-not-allowed"
                                 }`}
                               >
-                                {addedId === product.id ? "Added âœ“" : "Add to Bag"}
+                                {addedId === product.id ? "Added ✓" : "Add to Bag"}
                               </button>
                             </div>
                           ) : (
-                            <div className="py-4 text-center">
+                            <div className="py-3.5 text-center">
                               <button
                                 onClick={(e) => handleAddToBag(product, e)}
-                                className="text-[16px] font-500 tracking-[0.22em] uppercase text-black"
+                                className="text-[12px] font-500 tracking-[0.18em] uppercase text-black"
                               >
-                                {addedId === product.id ? "Added âœ“" : "Add to Bag"}
+                                {addedId === product.id ? "Added ✓" : "Add to Bag"}
                               </button>
                             </div>
                           )}
@@ -219,14 +216,14 @@ function ShopContent() {
                     </Link>
 
                     {/* Info */}
-                    <div className="mt-5 flex items-baseline justify-between gap-3">
+                    <div className="mt-4 flex items-baseline justify-between gap-3">
                       <Link
                         href={`/shop/${product.slug}`}
-                        className="text-[16px] font-300 tracking-[0.06em] text-black hover:text-[#9333EA] transition-colors duration-200"
+                        className="text-[14px] font-400 text-black hover:text-[#555] transition-colors duration-200 leading-snug"
                       >
                         {product.name}
                       </Link>
-                      <span className="text-[16px] font-300 text-[#9333EA] flex-shrink-0">
+                      <span className="text-[14px] font-400 text-black flex-shrink-0">
                         ${product.sizes[0].price}
                       </span>
                     </div>

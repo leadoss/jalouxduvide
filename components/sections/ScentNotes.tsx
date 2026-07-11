@@ -85,7 +85,7 @@ export default function ScentNotes() {
                 <br />
                 <span className="italic font-600">worth knowing.</span>
               </h2>
-              <p className="text-[#9333EA] font-300 text-lg leading-relaxed mb-4">
+              <p className="text-[#6B6B6B] font-300 text-[15px] leading-relaxed mb-4">
                 The story of a fragrance is told by its ingredients.
                 Tap a note below to discover its origin and character.
               </p>
@@ -108,14 +108,14 @@ export default function ScentNotes() {
                       style={{ backgroundColor: active.color }}
                     />
                     <div>
-                      <p className="text-lg font-500">{active.name}</p>
-                      <p className="text-lg font-300 text-[#9333EA]">{active.origin}</p>
+                      <p className="text-[14px] font-500 text-black">{active.name}</p>
+                      <p className="text-[13px] font-300 text-[#6B6B6B]">{active.origin}</p>
                     </div>
-                    <span className="ml-auto text-[16px] font-400 tracking-[0.1em] uppercase px-3 py-1 border border-[#E8E4DF] text-[#9333EA]">
+                    <span className="ml-auto text-[11px] font-400 tracking-[0.1em] uppercase px-3 py-1 border border-[#E8E4DF] text-[#999]">
                       {active.layer} Note
                     </span>
                   </div>
-                  <p className="text-lg font-300 text-[#7C3AED] leading-relaxed">
+                  <p className="text-[14px] font-300 text-[#3A3A3A] leading-[1.75]">
                     {active.description}
                   </p>
                 </motion.div>
@@ -134,18 +134,18 @@ export default function ScentNotes() {
                   onClick={() => setActive(active?.id === note.id ? null : note)}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
-                  className={`flex items-center gap-4 w-full px-6 py-5 border transition-all duration-200 text-left ${
+                  className={`flex items-center gap-4 w-full px-5 py-4 border transition-all duration-200 text-left ${
                     active?.id === note.id
-                      ? "border-black bg-black text-cream"
-                      : "border-[#E8E4DF] bg-white text-[#7C3AED] hover:border-[#C4BDB6]"
+                      ? "border-black bg-black text-white"
+                      : "border-[#E8E4DF] bg-white text-black hover:border-[#999]"
                   }`}
                 >
                   <span
-                    className="w-3.5 h-3.5 rounded-full flex-shrink-0"
+                    className="w-3 h-3 rounded-full flex-shrink-0"
                     style={{ backgroundColor: note.color }}
                   />
-                  <span className="text-lg font-300 flex-1">{note.name}</span>
-                  <span className="text-lg font-300 opacity-40">
+                  <span className="text-[14px] font-300 flex-1">{note.name}</span>
+                  <span className="text-[13px] font-300 opacity-40">
                     {note.origin.split(",")[0]}
                   </span>
                 </motion.button>
