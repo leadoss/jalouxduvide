@@ -177,10 +177,12 @@ export default function ProductPage({ params }: Props) {
                 </span>
               </div>
 
-              {/* Volume */}
-              <p className="text-[18px] font-400 text-black" style={{ marginBottom: "32px" }}>
-                {selectedSize.volume}
-              </p>
+              {/* Volume — diffusers only */}
+              {!isConcretePotCandle && (
+                <p className="text-[18px] font-400 text-black" style={{ marginBottom: "32px" }}>
+                  {selectedSize.volume}
+                </p>
+              )}
 
               {/* Description */}
               <p className="text-[17px] font-300 text-black leading-[1.9]" style={{ marginBottom: "52px" }}>
